@@ -1,0 +1,1 @@
+/home/ubald/.zprezto/runcoms/zlogin
