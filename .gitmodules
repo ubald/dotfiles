@@ -3,4 +3,4 @@
 	url = git@github.com:VundleVim/Vundle.vim.git
 [submodule ".zprezto"]
 	path = .zprezto
-	url = https://github.com/zsh-users/prezto.git
+	url = git@github.com:ubald/prezto.git
