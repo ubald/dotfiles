@@ -94,10 +94,10 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # switch to workspace
-bindsym $mod+1 workspace number 1
-bindsym $mod+2 workspace number 2
-bindsym $mod+3 workspace number 3
-bindsym $mod+4 workspace number 4
+bindsym $mod+1 workspace number 1:Term
+bindsym $mod+2 workspace number 2:Code
+bindsym $mod+3 workspace number 3:Chat
+bindsym $mod+4 workspace number 4:Web
 bindsym $mod+5 workspace number 5
 bindsym $mod+6 workspace number 6
 bindsym $mod+7 workspace number 7
@@ -106,16 +106,26 @@ bindsym $mod+9 workspace number 9
 bindsym $mod+0 workspace number 10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace number 1
-bindsym $mod+Shift+2 move container to workspace number 2
-bindsym $mod+Shift+3 move container to workspace number 3
-bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+1 move container to workspace number 1:Term
+bindsym $mod+Shift+2 move container to workspace number 2:Code
+bindsym $mod+Shift+3 move container to workspace number 3:Chat
+bindsym $mod+Shift+4 move container to workspace number 4:Web
 bindsym $mod+Shift+5 move container to workspace number 5
 bindsym $mod+Shift+6 move container to workspace number 6
 bindsym $mod+Shift+7 move container to workspace number 7
 bindsym $mod+Shift+8 move container to workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
+
+# assign windows to workspaces
+assign [class="jetbrains-pycharm"] 2:Code
+assign [class="jetbrains-clion"] 2:Code
+assign [class="jetbrains-idea"] 2:Code
+
+workspace 1:Term output DVI-I-1
+workspace 2:Code output DVI-I-1
+workspace 3:Chat output DP-4
+workspace 4:Web output DP-4
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -182,8 +192,8 @@ focus_follows_mouse no
 mouse_warping none
 workspace_auto_back_and_forth yes
 
-workspace 1 output DVI-I-1
-workspace 2 output DP-4
+#workspace 1 output DVI-I-1
+#workspace 2 output DP-4
 
 # Lock
 # bindsym $mod+l exec --no-startup-id i3lock -c 282c34 -i $wallpaper -t && sleep 1
@@ -239,4 +249,6 @@ exec --no-startup-id "compton --config ~/.config/compton.conf -b"
 exec --no-startup-id "$HOME/.config/polybar/polybar.sh"
 # Disable Nautilus desktop
 exec --no-startup-id "gsettings set org.gnome.desktop.background show-desktop-icons false"
+# Terminal
+exec --no-startup-msg i3-msg "workspace 1:Term; exec /usr/bin/terminator"
 
