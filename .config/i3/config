@@ -40,7 +40,7 @@ bindsym $mod+Shift+q kill
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -p run -fn terminus-8 -nb #5c6370 -nf #abb2bf -sb #528bff -sf #282c34"
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -b -p run -fn terminus-8 -nb #000000 -nf #abb2bf -sb #528bff -sf #282c34"
 
 # change focus
 bindsym $mod+j focus left
@@ -81,6 +81,7 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
+# und_box
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
@@ -223,15 +224,19 @@ client.background       #ffffff
 # STARTUP
 
 # Desktop Wallpaper
-exec --no-startup-id feh --bg-fill $wallpaper
+exec --no-startup-id "feh --bg-fill $wallpaper"
 # Pulse Audio
 exec --no-startup-id "pulseaudio --start"
 # Auto mount USB
 exec --no-startup-id "devmon --no-gui"
+# Network Manager
+exec --no-startup-id "nm-applet"
+# Dropbox
+exec --no-startup-id "$HOME/.dropbox-dist/dropboxd"
 # Compton
-exec --no-startup-id compton --config ~/.config/compton.conf -b
+exec --no-startup-id "compton --config ~/.config/compton.conf -b"
 # Polybar
-exec --no-startup-id $HOME/.config/polybar/polybar.sh
+exec --no-startup-id "$HOME/.config/polybar/polybar.sh"
 # Disable Nautilus desktop
-exec gsettings set org.gnome.desktop.background show-desktop-icons false
+exec --no-startup-id "gsettings set org.gnome.desktop.background show-desktop-icons false"
 

@@ -12,8 +12,10 @@ left-monitor = ${env:MONITOR:DVI-I-1}
 right-monitor = ${env:MONITOR:DP-4}
 
 [colors]
-background = #282c34
-background-alt = #636d83
+background = #000000
+;#282c34
+background-alt = #528bff
+;#636d83
 foreground = #abb2bf
 foreground-alt = #828997
 primary = #528bff
@@ -27,7 +29,7 @@ height = 27
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 2
+line-size = 0
 line-color = #f00
 
 ;border-size = 4
@@ -106,6 +108,7 @@ label-unmounted-foreground = ${colors.foreground-alt}
 type = internal/bspwm
 
 label-focused = %index%
+label-focused-foreground = #000000
 label-focused-background = ${colors.background-alt}
 label-focused-underline= ${colors.primary}
 label-focused-padding = 2
@@ -136,6 +139,7 @@ label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
 label-focused = %index%
+label-focused-foreground = ${module/bspwm.label-focused-foreground}
 label-focused-background = ${module/bspwm.label-focused-background}
 label-focused-underline = ${module/bspwm.label-focused-underline}
 label-focused-padding = ${module/bspwm.label-focused-padding}
