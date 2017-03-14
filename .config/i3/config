@@ -108,7 +108,7 @@ bindsym $mod+0 workspace number 10
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number 1:Term
 bindsym $mod+Shift+2 move container to workspace number 2:Code
-bindsym $mod+Shift+3 move container to workspace number 3:Chat
+bindsym $mod+Shift+3 move container to workspace number 3:Mail
 bindsym $mod+Shift+4 move container to workspace number 4:Chat
 bindsym $mod+Shift+5 move container to workspace number 5:Web
 bindsym $mod+Shift+6 move container to workspace number 6:Blender
@@ -124,8 +124,9 @@ assign [class="jetbrains-idea"] 2:Code
 
 workspace 1:Term output DVI-I-1
 workspace 2:Code output DVI-I-1
-workspace 3:Chat output DP-4
-workspace 4:Web output DP-4
+workspace 3:Mail output DP-4
+workspace 4:Chat output DP-4
+workspace 5:Web output DP-4
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
