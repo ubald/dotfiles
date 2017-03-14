@@ -196,11 +196,13 @@ workspace_auto_back_and_forth yes
 #workspace 2 output DP-4
 
 # Lock
+set $locker xscreensaver-command -lock
+#set $locker i3lock -c 282c34 -i $wallpaper && sleep 1
 # bindsym $mod+l exec --no-startup-id i3lock -c 282c34 -i $wallpaper -t && sleep 1
 # Lock, Logout, Suspend, HIbernate, Reboot and Shutdown
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
-    bindsym l exec --no-startup-id i3lock -c 282c34 -i $wallpaper && sleep 1, mode "default"
+    bindsym l exec --no-startup-id $locker, mode "default"
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
     bindsym s exec --no-startup-id $locker && systemctl suspend, mode "default"
     bindsym h exec --no-startup-id $locker && systemctl hibernate, mode "default"
@@ -222,6 +224,9 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
+# Keyboard
+bindsym $mod+Tab exec --no-startup-id dbus-send --dest=ru.gentoo.KbddService /ru/gentoo/KbddService ru.gentoo.kbdd.next_layout
+
 # class                 border  backgr. text    indicator child_border
 client.focused          #282c34 #528bff #282c34 #2e9ef4   #636d83
 client.focused_inactive #333333 #5f676a #abb2bf #484e50   #5f676a
@@ -241,6 +246,11 @@ exec --no-startup-id "pulseaudio --start"
 exec --no-startup-id "devmon --no-gui"
 # Network Manager
 exec --no-startup-id "nm-applet"
+# Keyboard
+exec --no-startup-id "setxkbmap -layout us,ca"
+exec --no-startup-id "kbdd"
+# Screensaver
+exec --no-startup-id "xscreensaver"
 # Dropbox
 exec --no-startup-id "$HOME/.dropbox-dist/dropboxd"
 # Compton
@@ -251,4 +261,3 @@ exec --no-startup-id "$HOME/.config/polybar/polybar.sh"
 exec --no-startup-id "gsettings set org.gnome.desktop.background show-desktop-icons false"
 # Terminal
 exec --no-startup-msg i3-msg "workspace 1:Term; exec /usr/bin/terminator"
-
