@@ -239,6 +239,8 @@ client.background       #ffffff
 
 # STARTUP
 
+# Monitor color profile
+exec --no-startup-id "xiccd"
 # Desktop Wallpaper
 exec --no-startup-id "feh --bg-fill $wallpaper"
 # Pulse Audio
