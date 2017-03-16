@@ -187,7 +187,7 @@ bindsym $mod+r mode "resize"
 set $wallpaper ~/.config/i3/wallpaper.png
 
 new_window normal 1
-new_float normal
+new_float normal 1
 hide_edge_borders both
 focus_follows_mouse no
 mouse_warping none
@@ -229,13 +229,13 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym $mod+Tab exec --no-startup-id dbus-send --dest=ru.gentoo.KbddService /ru/gentoo/KbddService ru.gentoo.kbdd.next_layout
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #282c34 #528bff #282c34 #2e9ef4   #636d83
-client.focused_inactive #333333 #5f676a #abb2bf #484e50   #5f676a
-client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.focused          #528bff #528bff #282c34 #2e9ef4   #528bff
+client.focused_inactive #5f676a #5f676a #abb2bf #484e50   #5f676a
+client.unfocused        #222222 #222222 #888888 #292d2e   #222222
 client.urgent           #2f343a #900000 #abb2bf #900000   #900000
 client.placeholder      #000000 #0c0c0c #abb2bf #000000   #0c0c0c
 
-client.background       #ffffff
+client.background       #282c34
 
 # STARTUP
 
