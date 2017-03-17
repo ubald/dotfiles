@@ -118,9 +118,13 @@ bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
 # assign windows to workspaces
+assign [window_role="main_terminal"] 1:Term
 assign [class="jetbrains-pycharm"] 2:Code
 assign [class="jetbrains-clion"] 2:Code
 assign [class="jetbrains-idea"] 2:Code
+assign [class="Evolution"] 3:Mail
+assign [class="Slack"] 4:Chat
+assign [class="Blender"] 6:Blender
 
 workspace 1:Term output DVI-I-1
 workspace 2:Code output DVI-I-1
@@ -263,4 +267,8 @@ exec --no-startup-id "$HOME/.config/polybar/polybar.sh"
 # Disable Nautilus desktop
 exec --no-startup-id "gsettings set org.gnome.desktop.background show-desktop-icons false"
 # Terminal
-exec --no-startup-msg i3-msg "workspace 1:Term; exec /usr/bin/terminator"
+# exec --no-startup-msg i3-msg "workspace 1:Term; exec /usr/bin/terminator"
+# Other Everyday Use Stuff
+exec terminator -r main_terminal
+exec evolution
+exec slack
