@@ -190,7 +190,7 @@ bindsym $mod+r mode "resize"
 
 set $wallpaper ~/.config/i3/wallpaper.png
 
-new_window normal 1
+new_window normal 0
 new_float normal 1
 hide_edge_borders both
 focus_follows_mouse no
@@ -234,7 +234,7 @@ bindsym $mod+Tab exec --no-startup-id dbus-send --dest=ru.gentoo.KbddService /ru
 
 # class                 border  backgr. text    indicator child_border
 client.focused          #528bff #528bff #282c34 #2e9ef4   #528bff
-client.focused_inactive #5f676a #5f676a #abb2bf #484e50   #5f676a
+client.focused_inactive #5c6370 #5c6370 #abb2bf #484e50   #5c6370
 client.unfocused        #222222 #222222 #888888 #292d2e   #222222
 client.urgent           #2f343a #900000 #abb2bf #900000   #900000
 client.placeholder      #000000 #0c0c0c #abb2bf #000000   #0c0c0c
