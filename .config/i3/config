@@ -27,7 +27,7 @@ font pango:terminus 8
 # font, it doesn’t scale on retina/hidpi displays.
 
 # Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
+floating_modifier Mod1
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
@@ -81,7 +81,6 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-# und_box
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
@@ -122,15 +121,18 @@ assign [window_role="main_terminal"] 1:Term
 assign [class="jetbrains-pycharm"] 2:Code
 assign [class="jetbrains-clion"] 2:Code
 assign [class="jetbrains-idea"] 2:Code
-assign [class="Evolution"] 3:Mail
-assign [class="Slack"] 4:Chat
-assign [class="Blender"] 6:Blender
+assign [class="Blender"] 3:Blender
+
+assign [class="Evolution"] 6:Mail
+assign [class="Slack"] 7:Chat
 
 workspace 1:Term output DVI-I-1
 workspace 2:Code output DVI-I-1
-workspace 3:Mail output DP-4
-workspace 4:Chat output DP-4
-workspace 5:Web output DP-4
+workspace 3:Blender output DVI-I-1
+
+workspace 6:Mail output DP-4
+workspace 7:Chat output DP-4
+workspace 8:Web output DP-4
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -167,6 +169,9 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
+# bar {
+#     i3bar_command ~/.config/i3/lemonbar/i3_lemonbar.sh
+# }
 #bar {
 #    position top
 #    status_command i3status
@@ -187,7 +192,6 @@ bindsym $mod+r mode "resize"
 #    }
 #}
 
-
 set $wallpaper ~/.config/i3/wallpaper.png
 
 new_window normal 0
@@ -196,9 +200,6 @@ hide_edge_borders both
 focus_follows_mouse no
 mouse_warping none
 workspace_auto_back_and_forth yes
-
-#workspace 1 output DVI-I-1
-#workspace 2 output DP-4
 
 # Lock
 set $locker xscreensaver-command -lock
@@ -229,16 +230,16 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-# Keyboard
+# Keyboard Layout Switching
 bindsym $mod+Tab exec --no-startup-id dbus-send --dest=ru.gentoo.KbddService /ru/gentoo/KbddService ru.gentoo.kbdd.next_layout
 
+# i3 Colors
 # class                 border  backgr. text    indicator child_border
 client.focused          #528bff #528bff #282c34 #2e9ef4   #528bff
 client.focused_inactive #5c6370 #5c6370 #abb2bf #484e50   #5c6370
 client.unfocused        #222222 #222222 #888888 #292d2e   #222222
 client.urgent           #2f343a #900000 #abb2bf #900000   #900000
 client.placeholder      #000000 #0c0c0c #abb2bf #000000   #0c0c0c
-
 client.background       #282c34
 
 # STARTUP
@@ -266,8 +267,7 @@ exec --no-startup-id "compton --config ~/.config/compton.conf -b"
 exec --no-startup-id "$HOME/.config/polybar/polybar.sh"
 # Disable Nautilus desktop
 exec --no-startup-id "gsettings set org.gnome.desktop.background show-desktop-icons false"
-# Terminal
-# exec --no-startup-msg i3-msg "workspace 1:Term; exec /usr/bin/terminator"
+
 # Other Everyday Use Stuff
 exec terminator -r main_terminal
 exec evolution

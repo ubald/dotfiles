@@ -18,6 +18,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'mbbill/undotree'
+Plugin 'supercollider/scvim'
 
 call vundle#end()
 filetype plugin indent on
