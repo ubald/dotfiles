@@ -271,6 +271,8 @@ exec --no-startup-id "compton --config ~/.config/compton.conf -b"
 exec --no-startup-id "$HOME/.config/polybar/polybar.sh"
 # Disable Nautilus desktop
 exec --no-startup-id "gsettings set org.gnome.desktop.background show-desktop-icons false"
+# Jetbrains Toolbox
+exec --no-startup-id "$HOME/Applications/jetbrains-toolbox"
 
 # Other Everyday Use Stuff
 exec terminator -r main_terminal
