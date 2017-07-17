@@ -40,7 +40,9 @@ bindsym $mod+Shift+q kill
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -b -p run -fn terminus-8 -nb #000000 -nf #abb2bf -sb #528bff -sf #282c34"
+#bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -b -p run -fn terminus-8 -nb #000000 -nf #abb2bf -sb #528bff -sf #282c34"
+bindsym $mod+d exec "rofi -font 'terminus 8' -combi-modi run,drun -show combi -modi combi -opacity 95"
+bindsym $mod+Shift+Tab exec "rofi -font 'terminus 8' -modi window -show window -opacity 95"
 
 # change focus
 bindsym $mod+j focus left
@@ -126,6 +128,8 @@ assign [class="Blender"] 3:Blender
 assign [class="Evolution"] 7:Mail
 assign [class="Slack"] 8:Chat
 
+for_window [class="Nvidia-settings"] floating enable
+
 workspace 1:Term output DVI-I-1
 workspace 2:Code output DVI-I-1
 workspace 3:Blender output DVI-I-1
@@ -173,6 +177,28 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
+#bar {
+#    font pango:terminesspowerline 8
+#    status_command ~/workspace/bumblebee-status/bumblebee-status \
+#        -m nic traffic disk cpu memory sensors pasink pasource layout dnf date time \
+#        -p time.format="%H:%M CW %V" date.format="%a, %b %d %Y" \
+#        -t gruvbox-powerline
+#    position top
+#    tray_output primary
+#    colors {
+#        background #282c34
+#        statusline #828987
+#        separator #636d83
+#        #focused_statusline
+#        #focused_background #528bff
+#        #focused_separator
+#        focused_workspace #528bff #528bff #282c34
+#        #active_workspace #       #       #
+#        #inactive_workspace #      #       #
+#        urgent_workspace #e06c75 #be5046 #282c34
+#        #binding_mode #       #       #
+#    }
+#}
 # bar {
 #     i3bar_command ~/.config/i3/lemonbar/i3_lemonbar.sh
 # }
@@ -217,7 +243,7 @@ mode "$mode_system" {
     bindsym s exec --no-startup-id $locker && systemctl suspend, mode "default"
     bindsym h exec --no-startup-id $locker && systemctl hibernate, mode "default"
     bindsym r exec --no-startup-id systemctl reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"  
+    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
     # back to normal: Enter or Escape
     bindsym Return mode "default"
     bindsym Escape mode "default"
@@ -272,9 +298,9 @@ exec --no-startup-id "$HOME/.config/polybar/polybar.sh"
 # Disable Nautilus desktop
 exec --no-startup-id "gsettings set org.gnome.desktop.background show-desktop-icons false"
 # Jetbrains Toolbox
-exec --no-startup-id "$HOME/Applications/jetbrains-toolbox"
+exec --no-startup-id "$HOME/.local/share/JetBrains/Toolbox/bin/jetbrains-toolbox"
 
 # Other Everyday Use Stuff
 exec terminator -r main_terminal
 exec evolution
-exec slack
+exec slackp

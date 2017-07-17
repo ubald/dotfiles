@@ -1,6 +1,8 @@
 [global_config]
   focus = system
+  geometry_hinting = True
   handle_size = 0
+  scroll_tabbar = True
   title_inactive_bg_color = "#65737e"
   title_transmit_bg_color = "#22cfff"
   title_transmit_fg_color = "#2d2d2d"
@@ -17,18 +19,17 @@
 [plugins]
 [profiles]
   [[default]]
-    antialias = False
     background_color = "#2d2d2d"
     background_darkness = 0.78
-    background_image = None
     background_type = transparent
     copy_on_selection = True
     cursor_color = "#d3d0c8"
     cursor_shape = ibeam
     font = Terminess Powerline 8
     foreground_color = "#d3d0c8"
+    icon_bell = False
     palette = "#2d2d2d:#f2777a:#99cc99:#ffcc66:#6699cc:#cc99cc:#66cccc:#d3d0c8:#747369:#f2777a:#99cc99:#ffcc66:#6699cc:#cc99cc:#66cccc:#f2f0ec"
-    scroll_on_output = False
     scrollback_lines = 5000
+    scrollbar_position = hidden
     show_titlebar = False
     use_system_font = False

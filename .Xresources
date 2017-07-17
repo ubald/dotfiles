@@ -1,0 +1,10 @@
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! ------------------------------------------------------------------------------
+! State: 'bg','fg', 'bgalt', 'hlbg', 'hlfg'
+rofi.color-enabled: true
+rofi.color-window: argb:60000000, #393939, #528bff
+rofi.color-normal: argb:00000000, #ffffff, argb:00000000, #528bff, #ffffff
+rofi.color-active: #303030, #528bff, #393939, #528bff, #ffffff
+rofi.color-urgent: #303030, #f3843d, #393939, #528bff, #ffc39c
+rofi.separator-style: none
