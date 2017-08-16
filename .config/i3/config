@@ -97,24 +97,24 @@ bindsym $mod+a focus parent
 # switch to workspace
 bindsym $mod+1 workspace number 1:Term
 bindsym $mod+2 workspace number 2:Code
-bindsym $mod+3 workspace number 3:Blender
+bindsym $mod+3 workspace number 3
 bindsym $mod+4 workspace number 4
 bindsym $mod+5 workspace number 5
 bindsym $mod+6 workspace number 6:Web
-bindsym $mod+7 workspace number 7:Mail
-bindsym $mod+8 workspace number 8:Chat
+bindsym $mod+7 workspace number 7:Media
+bindsym $mod+8 workspace number 8:Comms
 bindsym $mod+9 workspace number 9
 bindsym $mod+0 workspace number 10
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number 1:Term
 bindsym $mod+Shift+2 move container to workspace number 2:Code
-bindsym $mod+Shift+3 move container to workspace number 3:Blender
+bindsym $mod+Shift+3 move container to workspace number 3
 bindsym $mod+Shift+4 move container to workspace number 4
 bindsym $mod+Shift+5 move container to workspace number 5
 bindsym $mod+Shift+6 move container to workspace number 6:Web
-bindsym $mod+Shift+7 move container to workspace number 7:Mail
-bindsym $mod+Shift+8 move container to workspace number 8:Chat
+bindsym $mod+Shift+7 move container to workspace number 7:Media
+bindsym $mod+Shift+8 move container to workspace number 8:Comms
 bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
@@ -123,22 +123,26 @@ assign [window_role="main_terminal"] 1:Term
 assign [class="jetbrains-pycharm"] 2:Code
 assign [class="jetbrains-clion"] 2:Code
 assign [class="jetbrains-idea"] 2:Code
-assign [class="Blender"] 3:Blender
+assign [class="Blender"] 3
 
-assign [class="Evolution"] 7:Mail
-assign [class="Slack"] 8:Chat
+for_window [class="Spotify"] move to workspace 7:Media
+#for_window [title="Panda"] move to workspace 10
+assign [class="Evolution"] 8:Comms
+assign [class="Slack"] 8:Comms
 
 for_window [class="Nvidia-settings"] floating enable
 
+# use `xrandr` to list possible outputs
+
 workspace 1:Term output DVI-I-1
 workspace 2:Code output DVI-I-1
-workspace 3:Blender output DVI-I-1
+workspace 3 output DVI-I-1
 workspace 4 output DVI-I-1
 workspace 5 output DVI-I-1
 
-workspace 6:Mail output DP-4
-workspace 7:Chat output DP-4
-workspace 8:Web output DP-4
+workspace 6:Web output DP-4
+workspace 7:Media output DP-4
+workspace 8:Comms output DP-4
 workspace 9 output DP-4
 workspace 0 output DP-4
 
@@ -273,7 +277,8 @@ client.placeholder      #000000 #0c0c0c #abb2bf #000000   #0c0c0c
 client.background       #282c34
 
 # STARTUP
-
+# Monitor order
+exec --not-startup-id "xrandr -d :0 --output HDMI-0 --left-of DVI-I-1 --output DP-4 --right-of DVI-I-1"
 # Monitor color profile
 exec --no-startup-id "xiccd"
 # Desktop Wallpaper
@@ -301,6 +306,7 @@ exec --no-startup-id "gsettings set org.gnome.desktop.background show-desktop-ic
 exec --no-startup-id "$HOME/.local/share/JetBrains/Toolbox/bin/jetbrains-toolbox"
 
 # Other Everyday Use Stuff
-exec terminator -r main_terminal
-exec evolution
-exec slackp
+exec --no-startup-id terminator -r main_terminal
+exec --no-startup-id spotify
+exec --no-startup-id evolution
+exec --no-startup-id slack
