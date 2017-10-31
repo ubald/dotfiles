@@ -9,3 +9,5 @@ rofi.color-active: #303030, #528bff, #393939, #528bff, #ffffff
 rofi.color-urgent: #303030, #f3843d, #393939, #528bff, #ffc39c
 rofi.separator-style: none
 rofi.fullscreen: true
+
+Xcursor.size: 16

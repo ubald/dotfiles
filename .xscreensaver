@@ -1,5 +1,5 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-demo 5.36 for ubald on Mon Jul  3 17:58:27 2017.
+# Written by xscreensaver-demo 5.36 for ubald on Tue Oct 31 17:33:58 2017.
 # https://www.jwz.org/xscreensaver/
 
 timeout:	0:10:00
@@ -54,20 +54,20 @@ programs:								      \
 				imsmap -root				    \n\
 -				noseguy -root				    \n\
 -				pyro -root				    \n\
-				qix -root				    \n\
+-				qix -root				    \n\
 -				rocks -root				    \n\
 				rorschach -root				    \n\
 				decayscreen -root			    \n\
 				flame -root				    \n\
 				halo -root				    \n\
-				slidescreen -root			    \n\
-				pedal -root				    \n\
+-				slidescreen -root			    \n\
+-				pedal -root				    \n\
 -				bouboule -root				    \n\
 				braid -root				    \n\
 				coral -root				    \n\
 -				deco -root				    \n\
 				drift -root				    \n\
--				fadeplot -root				    \n\
+				fadeplot -root				    \n\
 				galaxy -root				    \n\
 				goop -root				    \n\
 				grav -root				    \n\
@@ -95,7 +95,7 @@ programs:								      \
 -				xjack -root				    \n\
 				xlyap -root				    \n\
 - GL: 				atlantis -root				    \n\
-				bsod -root				    \n\
+				bsod -root -atari -bsd -sparclinux	    \n\
 - GL: 				bubble3d -root				    \n\
 - GL: 				cage -root				    \n\
 -				crystal -root				    \n\
@@ -113,20 +113,20 @@ programs:								      \
 - GL: 				stairs -root				    \n\
 				truchet -root				    \n\
 -				vidwhacker -root			    \n\
-				blaster -root				    \n\
+-				blaster -root				    \n\
 -				bumps -root				    \n\
 				ccurve -root				    \n\
-				compass -root				    \n\
+-				compass -root				    \n\
 -				deluxe -root				    \n\
 				demon -root				    \n\
 - GL: 				extrusion -root				    \n\
--				loop -root				    \n\
-				penetrate -root				    \n\
+				loop -root				    \n\
+-				penetrate -root				    \n\
 				petri -root				    \n\
 				phosphor -root				    \n\
 - GL: 				pulsar -root				    \n\
-				ripples -root				    \n\
-				shadebobs -root				    \n\
+-				ripples -root				    \n\
+-				shadebobs -root				    \n\
 - GL: 				sierpinski3d -root			    \n\
 				spotlight -root				    \n\
 				squiral -root				    \n\
@@ -138,7 +138,7 @@ programs:								      \
 -				nerverot -root				    \n\
 				xrayswarm -root				    \n\
 				xspirograph -root			    \n\
-  GL: 				circuit -root				    \n\
+- GL: 				circuit -root				    \n\
 - GL: 				dangerball -root			    \n\
 - GL: 				engine -root				    \n\
 - GL: 				flipscreen3d -root			    \n\
@@ -149,7 +149,7 @@ programs:								      \
 				speedmine -root				    \n\
 - GL: 				starwars -root				    \n\
 - GL: 				stonerview -root			    \n\
-				vermiculate -root			    \n\
+  any: 				vermiculate -root			    \n\
 -				whirlwindwarp -root			    \n\
 				zoom -root				    \n\
 				anemone -root				    \n\
@@ -174,7 +174,7 @@ programs:								      \
 - GL: 				antspotlight -root			    \n\
 				apple2 -root				    \n\
 - GL: 				atunnel -root				    \n\
-				barcode -root				    \n\
+-				barcode -root				    \n\
 - GL: 				blinkbox -root				    \n\
 - GL: 				blocktube -root				    \n\
 - GL: 				bouncingcow -root			    \n\
@@ -184,25 +184,25 @@ programs:								      \
 - GL: 				flipflop -root				    \n\
 - GL: 				flyingtoasters -root			    \n\
 				fontglide -root				    \n\
-- GL: 				gleidescope -root			    \n\
+  GL: 				gleidescope -root			    \n\
 - GL: 				glknots -root				    \n\
 - GL: 				glmatrix -root				    \n\
-- GL: 				glslideshow -root			    \n\
+  GL: 				glslideshow -root			    \n\
 - GL: 				hypertorus -root			    \n\
 - GL: 				jigglypuff -root			    \n\
 				metaballs -root				    \n\
 - GL: 				mirrorblob -root			    \n\
 				piecewise -root				    \n\
-- GL: 				polytopes -root				    \n\
+  GL: 				polytopes -root				    \n\
 				pong -root				    \n\
-				popsquares -root			    \n\
-- GL: 				surfaces -root				    \n\
--				xanalogtv -root				    \n\
+-				popsquares -root			    \n\
+  GL: 				surfaces -root				    \n\
+				xanalogtv -root				    \n\
 				abstractile -root			    \n\
 				anemotaxis -root			    \n\
 - GL: 				antinspect -root			    \n\
-				fireworkx -root				    \n\
-				fuzzyflakes -root			    \n\
+-				fireworkx -root				    \n\
+-				fuzzyflakes -root			    \n\
 				interaggregate -root			    \n\
 				intermomentary -root			    \n\
 				memscroller -root			    \n\
@@ -235,39 +235,39 @@ programs:								      \
 				m6502 -root				    \n\
 - GL: 				moebiusgears -root			    \n\
   GL: 				voronoi -root				    \n\
-- GL: 				hypnowheel -root			    \n\
-- GL: 				klein -root				    \n\
--				lcdscrub -root				    \n\
+  GL: 				hypnowheel -root			    \n\
+  GL: 				klein -root				    \n\
+				lcdscrub -root				    \n\
 - GL: 				photopile -root				    \n\
 - GL: 				skytentacles -root			    \n\
 - GL: 				rubikblocks -root			    \n\
 - GL: 				companioncube -root			    \n\
-- GL: 				hilbert -root				    \n\
+  GL: 				hilbert -root				    \n\
 - GL: 				tronbit -root				    \n\
 - GL: 				geodesic -root				    \n\
 				hexadrop -root				    \n\
 - GL: 				kaleidocycle -root			    \n\
 - GL: 				quasicrystal -root			    \n\
-  GL: 				unknownpleasures -root			    \n\
+- GL: 				unknownpleasures -root			    \n\
 				binaryring -root			    \n\
 - GL: 				cityflow -root				    \n\
 - GL: 				geodesicgears -root			    \n\
-- GL: 				projectiveplane -root			    \n\
+  GL: 				projectiveplane -root			    \n\
 - GL: 				romanboy -root				    \n\
-				tessellimage -root			    \n\
+-				tessellimage -root			    \n\
 - GL: 				winduprobot -root			    \n\
 - GL: 				splitflap -root				    \n\
 -				testx11 -root				    \n\
   GL: 				cubestack -root				    \n\
   GL: 				cubetwist -root				    \n\
-  GL: 				discoball -root				    \n\
-  GL: 				dymaxionmap -root			    \n\
-  GL: 				energystream -root			    \n\
+- GL: 				discoball -root				    \n\
+- GL: 				dymaxionmap -root			    \n\
+- GL: 				energystream -root			    \n\
   GL: 				hexstrut -root				    \n\
-  GL: 				hydrostat -root				    \n\
-  GL: 				raverhoop -root				    \n\
+- GL: 				hydrostat -root				    \n\
+- GL: 				raverhoop -root				    \n\
   GL: 				splodesic -root				    \n\
-  GL: 				unicrud -root				    \n\
+- GL: 				unicrud -root				    \n\
 
 
 pointerPollTime:    0:00:05
