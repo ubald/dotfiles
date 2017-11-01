@@ -14,17 +14,17 @@ right-monitor = ${env:MONITOR:DP-4}
 [colors]
 background = #000000
 ;#282c34
-background-alt = #528bff
+background-alt = #008CCC
 ;#636d83
 foreground = #abb2bf
 foreground-alt = #828997
-primary = #528bff
+primary = #008CCC
 secondary = #e5c07b
 alert = #be5046
 
 [bar/base]
 width = 100%
-height = 27
+height = 24
 
 background = ${colors.background}
 foreground = ${colors.foreground}
