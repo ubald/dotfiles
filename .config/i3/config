@@ -305,8 +305,12 @@ exec --no-startup-id "gsettings set org.gnome.desktop.background show-desktop-ic
 # Jetbrains Toolbox
 exec --no-startup-id "$HOME/.local/share/JetBrains/Toolbox/bin/jetbrains-toolbox"
 
+# Natural Scrolling
+exec --no-startup-id "xinput set-prop 9 293 1"
+
 # Other Everyday Use Stuff
 exec --no-startup-id terminator -r main_terminal
 exec --no-startup-id spotify
 exec --no-startup-id evolution
 exec --no-startup-id slack
+
