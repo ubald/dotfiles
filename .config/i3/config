@@ -299,7 +299,7 @@ exec --no-startup-id "$HOME/.dropbox-dist/dropboxd"
 # Compton
 exec --no-startup-id "compton --config ~/.config/compton.conf -b"
 # Polybar
-exec --no-startup-id "$HOME/.config/polybar/polybar.sh"
+exec_always --no-startup-id "$HOME/.config/polybar/polybar.sh"
 # Disable Nautilus desktop
 exec --no-startup-id "gsettings set org.gnome.desktop.background show-desktop-icons false"
 # Jetbrains Toolbox
