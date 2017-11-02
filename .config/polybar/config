@@ -119,7 +119,7 @@ label-visible-padding = 2
 ; urgent = Workspace with urgency hint set
 label-urgent = %name%
 label-urgent-background = ${xrdb:theme.alert}
-label-urgent-padding = ${xrdb:theme.active.foreground}
+label-urgent-padding = 2
 
 [module/xwindow]
 type = internal/xwindow
