@@ -268,13 +268,22 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym $mod+Tab exec --no-startup-id dbus-send --dest=ru.gentoo.KbddService /ru/gentoo/KbddService ru.gentoo.kbdd.next_layout
 
 # i3 Colors
-# class                 border  backgr. text    indicator child_border
-client.focused          #008CCC #008CCC #282c34 #2e9ef4   #008CCC
-client.focused_inactive #5c6370 #5c6370 #abb2bf #484e50   #5c6370
-client.unfocused        #222222 #222222 #888888 #292d2e   #222222
-client.urgent           #2f343a #900000 #abb2bf #900000   #900000
-client.placeholder      #000000 #0c0c0c #abb2bf #000000   #0c0c0c
-client.background       #282c34
+set_from_resource $active_background theme.active.background #008CCC
+set_from_resource $active_foreground theme.active.foreground #282c34
+set_from_resource $inactive_background theme.inactive.background #5c6370
+set_from_resource $inactive_foreground theme.inactive.foreground #abb2bf
+set_from_resource $unfocused_background theme.unfocused.background #222222
+set_from_resource $unfocused_foreground theme.unfocused.foreground #888888
+set_from_resource $background theme.background #282c34
+set_from_resource $alert theme.alert #FF0000
+
+# class                 border / background / text / indicator / child_border
+client.focused          $active_background $active_background $active_foreground $active_background $active_background
+client.focused_inactive $inactive_background $inactive_background $inactive_foreground $inactive_background $inactive_background
+client.unfocused        $unfocused_background $unfocused_background $unfocused_foreground $unfocused_background $unfocused_background
+client.urgent           $red $red $active_foreground $red $red
+client.placeholder      $unfocused_background $unfocused_background $unfocused_foreground $unfocused_background $unfocused_background
+client.background       $background
 
 # STARTUP
 # Monitor order
@@ -313,4 +322,3 @@ exec --no-startup-id terminator -r main_terminal
 exec --no-startup-id spotify
 exec --no-startup-id evolution
 exec --no-startup-id slack
-

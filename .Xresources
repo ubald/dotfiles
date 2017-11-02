@@ -1,11 +1,11 @@
 #define ORANGE_ #f3843d
-#define BLUE_ #008CCC
 #define LIGHT #abb2bf
 #define MEDIUM #828997
 #define DARK #5c6370
 #define DARKER #1d1f22
 #define CYAN #56b6c2
 #define BLUE #61afef
+#define BLUE_ #008CCC
 #define BLUE_ACCENT #528bff
 #define PURPLE #c678dd
 #define GREEN #98c379
@@ -36,13 +36,26 @@ colors.foreground: FOREGROUND
 colors.background: BACKGROUND
 colors.gutter: GUTTER
 
+! THEME
+theme.active.background: BLUE_
+theme.active.foreground: BACKGROUND
+theme.inactive.background: DARK
+theme.inactive.foreground: BACKGROUND
+theme.unfocused.background: #222222
+theme.unfocused.foreground: #888888
+theme.foreground: FOREGROUND
+theme.highlight: BLUE_
+theme.alert: RED
+theme.background: BACKGROUND
+theme.empty: DARKER
+
 ! ROFI
 ! State: 'bg','fg', 'bgalt', 'hlbg', 'hlfg'
 rofi.color-enabled: true
-rofi.color-window: argb:60000000, #393939, BLUE_
-rofi.color-normal: argb:00000000, #ffffff, argb:00000000, BLUE_, #ffffff
-rofi.color-active: #303030, BLUE_, #393939, BLUE_, #ffffff
-rofi.color-urgent: #303030, ORANGE_, #393939, ORANGE_, #ffc39c
+rofi.color-window: argb:60000000, BACKGROUND, BLUE_
+rofi.color-normal: argb:00000000, FOREGROUND, argb:00000000, BLUE_, BACKGROUND
+rofi.color-active: BACKGROUND, BLUE_, BACKGROUND, BLUE_, BACKGROUND
+rofi.color-urgent: BACKGROUND, ORANGE_, BACKGROUND, ORANGE_, ORANGE_
 rofi.separator-style: none
 rofi.fullscreen: true
 
