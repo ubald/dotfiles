@@ -8,18 +8,8 @@
 ;=====================================================
 
 [prefs]
-left-monitor = ${env:MONITOR:DVI-I-1}
+left-monitor = ${env:MONITOR:DP-2}
 right-monitor = ${env:MONITOR:DP-4}
-
-; [colors]
-; background = ${xrdb:colors.background}
-; background-alt = ${xrdb:colors.blue_}
-; foreground = ${xrdb:colors.foreground}
-; foreground-alt = ${xrdb:colors.medium}
-; primary = ${xrdb:colors.blue_}
-; secondary = ${xrdb:colors.yellow}
-; alert = ${xrdb:colors.red}
-; empty = ${xrdb:colors.darker}
 
 [bar/base]
 width = 100%
@@ -47,7 +37,6 @@ font-2 = siji:pixelsize=8;1
 
 modules-left = i3
 modules-center = xwindow
-modules-right = xkeyboard eth volume memory cpu temperature date powermenu
 
 ;tray-transparent = true
 tray-background = ${xrdb:colors.background}
@@ -66,12 +55,14 @@ tray-background = ${xrdb:colors.background}
 [bar/top-left]
 inherit = bar/base
 monitor = ${prefs.left-monitor}
+modules-right = xkeyboard eth volume memory cpu temperature date
 tray-position = right
 tray-padding = 2
 
 [bar/top-right]
 inherit = bar/base
 monitor = ${prefs.right-monitor}
+modules-right =
 
 [settings]
 screenchange-reload = true

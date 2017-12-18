@@ -68,6 +68,7 @@ set splitright
 set splitbelow
 set mouse=a
 set ttymouse=xterm2
+set guifont=Terminess\ Powerline\ 8
 
 " Search
 set incsearch

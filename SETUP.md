@@ -12,7 +12,7 @@
 ### Polybar
 
     sudo apt install unifont ccache libcairo2-dev xcb-proto libasound2-dev libcurl4-openssl-dev libmpdclient-dev libiw-dev
-    sudo apt install libxcb1-dev libxcb-xkb-dev libxcb-randr0-dev libxcb-util-dev libxcb-icccm4-dev libxcb-ewmh-dev libxcb-render0-dev libxcb-xrm-dev libxcb-composite0-dev libxcb-sync-dev libxcb-damage0-dev
+    sudo apt install libxcb1-dev libxcb-xkb-dev libxcb-randr0-dev libxcb-util-dev libxcb-icccm4-dev libxcb-ewmh-dev libxcb-render0-dev libxcb-xrm-dev libxcb-composite0-dev libxcb-sync-dev libxcb-damage0-dev libxcb-cursor-dev 
 
 ## Customization
 
