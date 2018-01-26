@@ -36,3 +36,8 @@
 
 # Install Headless Dropbox
 https://www.dropbox.com/install-linux
+
+# Enable defiens in .Xresources (17.10)
+
+    sudo vim /etc/gdm3/Xsession
+    Limne 132, remove option -nocpp for userresources
