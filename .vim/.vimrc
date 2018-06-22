@@ -1,3 +1,8 @@
+"Vim needs a POSIX-Compliant shell. Fish is not.
+if $SHELL =~ 'bin/fish'
+  set shell=/bin/sh
+endif
+
 set nocompatible
 filetype off
 
@@ -15,6 +20,8 @@ Plugin 'plasticboy/vim-markdown'
 "Plugin 'jansenm/vim-cmake'
 Plugin 'rhysd/vim-clang-format'
 Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'ryanoasis/vim-devicons'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'mbbill/undotree'
@@ -31,8 +38,8 @@ colorscheme onedark
 let g:airline_theme='onedark'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
+"let g:airline#extensions#tabline#left_sep = ' '
+"let g:airline#extensions#tabline#left_alt_sep = '|'
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
