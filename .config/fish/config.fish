@@ -1,10 +1,10 @@
 # Theme
 set -g theme_display_user ssh
 set -g theme_display_hostname ssh
+set -g theme_display_date no
 set -g theme_title_display_process yes
 set -g theme_powerline_fonts yes
 set -g theme_nerd_fonts yes
-set -g theme_color_scheme terminal
 
 # Colors
 set fish_color_normal normal
