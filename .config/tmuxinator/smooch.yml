@@ -45,13 +45,13 @@ root: ~/
 windows:
   - shell:
   - server:
-      root: ~/src/smooch
+      root: ~/Workspace/smooch
       layout: main-vertical
       panes:
         - npm run dev
         - npm run webpack
   - ngrok: ngrok start --all
   - docker:
-      root: ~/src/smooch-rabbitmq-docker
+      root: ~/Workspace
       panes:
-        - docker-compose up
+        - docker-compose -f smooch.yml up

@@ -1,0 +1,6 @@
+package foreign-env
+package https://github.com/tuvistavie/fish-ssh-agent.git
+package https://github.com/zimski/ssh_agent
+package nvm
+theme bobthefish
+theme default
