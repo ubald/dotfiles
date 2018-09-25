@@ -37,6 +37,7 @@ set fish_color_selection white --bold --background=brblack
 set fish_color_status red
 set fish_color_valid_path cyan
 
+alias vim="nvim"
 export EDITOR='vim'
 
 set -gx PATH ~/Library/Python/3.6/bin $PATH

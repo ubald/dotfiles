@@ -32,7 +32,11 @@ filetype plugin indent on
 
 syntax on
 syntax enable
-
+set termguicolors
+"let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+"let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+"set t_8f=[38;2;%lu;%lu;%lum  " Needed in tmux
+"set t_8b=[48;2;%lu;%lu;%lum  " Ditto
 colorscheme onedark
 
 let g:airline_theme='onedark'
@@ -74,7 +78,9 @@ set laststatus=2
 set splitright
 set splitbelow
 set mouse=a
-set ttymouse=xterm2
+if !has('nvim')
+    set ttymouse=xterm2
+endif
 set guifont=Terminess\ Powerline\ 8
 
 " Search

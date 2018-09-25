@@ -43,15 +43,17 @@ root: ~/
 # post: tmux -CC attach -t smooch
 
 windows:
-  - shell:
-  - server:
+  - Shell:
+  - Server:
+      name: Smooch Server
       root: ~/Workspace/smooch
       layout: main-vertical
       panes:
         - npm run dev
         - npm run webpack
   - ngrok: ngrok start --all
-  - docker:
-      root: ~/Workspace
+  - Docker:
+      name: Docker
+      root: ~/Workspace/smooch
       panes:
-        - docker-compose -f smooch.yml up
+        - docker-compose -p workspace -f docker/docker-compose-dev.yml up
