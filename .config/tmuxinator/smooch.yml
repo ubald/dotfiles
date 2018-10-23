@@ -51,7 +51,13 @@ windows:
       panes:
         - npm run dev
         - npm run webpack
-  - ngrok: ngrok start --all
+  - ngrok:
+      name: ngrok Service
+      root: ~/Workspace/webhooks
+      layout: main-horizontal
+      panes:
+        - ngrok start --all
+        - node index.js
   - Docker:
       name: Docker
       root: ~/Workspace/smooch

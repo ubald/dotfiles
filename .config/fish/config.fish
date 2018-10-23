@@ -40,7 +40,7 @@ set fish_color_valid_path cyan
 alias vim="nvim"
 export EDITOR='vim'
 
-set -gx PATH ~/Library/Python/3.6/bin $PATH
+#set -gx PATH ~/Library/Python/3.6/bin $PATH
 
 if test -e ~/.vars
     source ~/.vars
