@@ -1,7 +1,7 @@
 # ~/.tmuxinator/smooch.yml
 
 name: smooch
-root: ~/
+root: ~
 
 # Optional tmux socket
 # socket_name: foo
@@ -43,23 +43,27 @@ root: ~/
 # post: tmux -CC attach -t smooch
 
 windows:
-  - Shell:
-  - Server:
-      name: Smooch Server
+  - Terminal:
+      name: Terminal
+      root: ~/
+  - Repository:
+      name: Repository
       root: ~/Workspace/smooch
-      layout: main-vertical
-      panes:
-        - npm run dev
-        - npm run webpack
-  - ngrok:
-      name: ngrok Service
-      root: ~/Workspace/webhooks
+  - Compiler:
+      name: Compiler
+      root: ~/Workspace/smooch
       layout: main-horizontal
       panes:
-        - ngrok start --all
-        - node index.js
+        - npm run ts:watch
   - Docker:
       name: Docker
       root: ~/Workspace/smooch
       panes:
         - docker-compose -p workspace -f docker/docker-compose-dev.yml up
+  - ngrok:
+      name: ngrok
+      root: ~/Workspace/webhooks
+      layout: main-horizontal
+      panes:
+        - ngrok start --all
+        - node index.js
