@@ -53,3 +53,5 @@ end
 if not __ssh_agent_is_started
     __ssh_agent_start
 end
+
+thefuck --alias | source
