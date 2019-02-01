@@ -55,3 +55,4 @@ if not __ssh_agent_is_started
 end
 
 thefuck --alias | source
+set -xg FZF_DEFAULT_OPTS '--height 40% --layout=reverse --border'

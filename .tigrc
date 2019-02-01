@@ -1,2 +1,3 @@
 color cursor black green
-
+color title-focus black blue
+color title-blur black white 
