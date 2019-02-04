@@ -132,17 +132,17 @@ for_window [class="Nvidia-settings"] floating enable
 
 # use `xrandr` to list possible outputs
 
-workspace 1:Term output DP-2
-workspace 2:Code output DP-2
-workspace 3 output DP-2
-workspace 4 output DP-2
-workspace 5 output DP-2
+#workspace 1:Term output DP-2
+#workspace 2:Code output DP-2
+#workspace 3 output DP-2
+#workspace 4 output DP-2
+#workspace 5 output DP-2
 
-workspace 6:Web output DP-4
-workspace 7:Comms output DP-4
-workspace 8:Media output DP-4
-workspace 9 output DP-4
-workspace 0 output DP-4
+#workspace 6:Web output DP-4
+#workspace 7:Comms output DP-4
+#workspace 8:Media output DP-4
+#workspace 9 output DP-4
+#workspace 0 output DP-4
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -285,7 +285,7 @@ client.background       $background
 
 # STARTUP
 # Monitor order
-exec --no-startup-id "xrandr -d :1 --output DVI-I-1 --left-of DP-2 --output DP-4 --right-of DP-2"
+# exec --no-startup-id "xrandr -d :1 --output DVI-I-1 --left-of DP-2 --output DP-4 --right-of DP-2"
 # Monitor color profile
 exec --no-startup-id "xiccd"
 # Desktop Wallpaper
@@ -302,7 +302,7 @@ exec --no-startup-id "kbdd"
 # Screensaver
 exec --no-startup-id "xscreensaver"
 # Dropbox
-exec --no-startup-id "$HOME/.dropbox-dist/dropboxd"
+# exec --no-startup-id "$HOME/.dropbox-dist/dropboxd"
 # Compton
 exec --no-startup-id "compton --config ~/.config/compton.conf -b"
 # Polybar
@@ -313,10 +313,10 @@ exec --no-startup-id "gsettings set org.gnome.desktop.background show-desktop-ic
 exec --no-startup-id "$HOME/.local/share/JetBrains/Toolbox/bin/jetbrains-toolbox"
 
 # Natural Scrolling
-exec --no-startup-id "xinput set-prop 9 293 1"
+# exec --no-startup-id "xinput set-prop 9 293 1"
 
 # Other Everyday Use Stuff
-exec --no-startup-id terminator -r main_terminal
-exec --no-startup-id spotify
-exec --no-startup-id evolution
-exec --no-startup-id slack
+# exec --no-startup-id terminator -r main_terminal
+# exec --no-startup-id spotify
+# exec --no-startup-id evolution
+# exec --no-startup-id slack
