@@ -93,16 +93,16 @@ for config in $BASE_DIR/.config/*; do
     ln -s "$config" ~/.config/$(basename "$config");
 done
 
-ln -s .tmux ~/.tmux
-ln -s .tmux.conf ~/.tmux.conf
+ln -s $BASE_DIR/.tmux ~/.tmux
+ln -s $BASE_DIR/.tmux.conf ~/.tmux.conf
 
-ln -s .vim ~/.vim
-ln -s .vimrc ~/.vimrc
+ln -s $BASE_DIR/.vim ~/.vim
+ln -s $BASE_DIR/.vimrc ~/.vimrc
 
-ln -s .fehbg ~/.fehbg
-ln -s .tigrc ~/.tigrc
-ln -s .Xresources ~/.Xresources
-ln -s .xscreensaver ~/.xscreensaver
+ln -s $BASE_DIR/.fehbg ~/.fehbg
+ln -s $BASE_DIR/.tigrc ~/.tigrc
+ln -s $BASE_DIR/.Xresources ~/.Xresources
+ln -s $BASE_DIR/.xscreensaver ~/.xscreensaver
 
 # Configure git
 echo 'Configure git'
@@ -114,8 +114,6 @@ git config --global alias.st status
 git config --global alias.unstage "reset HEAD --git"
 git config --global user.name "François Ubald Brien"
 git config --global user.email "ubald@ubaldesign.com"
-git config --global core.autocrlf "true"
-git config --global core.safecrlf "warn"
 
 # Use fish by default
 #chsh -s $(which fish)
