@@ -2,7 +2,7 @@
 
 ## Essentials
 
-    sudo apt install terminator zsh git xfonts-terminus
+    sudo apt install terminator git xfonts-terminus
 
 ## i3
 
