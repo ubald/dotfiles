@@ -8,8 +8,8 @@
 ;=====================================================
 
 [prefs]
-left-monitor = ${env:MONITOR:DP-2}
-right-monitor = ${env:MONITOR:DP-4}
+;left-monitor = ${env:MONITOR:DP-2}
+;right-monitor = ${env:MONITOR:DP-4}
 
 [bar/base]
 width = 100%
@@ -52,17 +52,17 @@ tray-background = ${xrdb:colors.background}
 ;scroll-up = i3wm-wsnext
 ;scroll-down = i3wm-wsprev
 
-[bar/top-left]
+[bar/default]
 inherit = bar/base
-monitor = ${prefs.left-monitor}
+;monitor = ${prefs.left-monitor}
 modules-right = xkeyboard eth volume memory cpu temperature date
 tray-position = right
 tray-padding = 2
 
-[bar/top-right]
-inherit = bar/base
-monitor = ${prefs.right-monitor}
-modules-right =
+;[bar/top-right]
+;inherit = bar/base
+;monitor = ${prefs.right-monitor}
+;modules-right =
 
 [settings]
 screenchange-reload = true
