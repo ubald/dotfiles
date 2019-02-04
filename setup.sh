@@ -1,4 +1,5 @@
 #!/bin/sh
+set -e
 
 BASE_DIR=$PWD
 
@@ -29,26 +30,27 @@ if [ -d polybar ]; then
     rm -rf polybar
 fi
 git clone --recurse-submodules https://github.com/jaagr/polybar.git
-cd polybar && mkdir build && cd build && \
-cmake                            \
-  -DCMAKE_C_COMPILER="clang"     \
-  -DCMAKE_CXX_COMPILER="clang++" \
-  -DENABLE_ALSA:BOOL="ON"        \
-  -DENABLE_I3:BOOL="ON"          \
-  -DENABLE_MPD:BOOL="ON"         \
-  -DENABLE_NETWORK:BOOL="ON"     \
-  -DENABLE_CURL:BOOL="ON"        \
-  -DBUILD_IPC_MSG:BOOL="ON"      \
-  -DWITH_XCOMPOSITE:BOOL="ON"    \
-  -DWITH_XCURSOR:BOOL="ON"       \
-  -DWITH_XDAMAGE:BOOL="ON"       \
-  -DWITH_XKB:BOOL="ON"           \
-  -DWITH_XRANDR:BOOL="ON"        \
-  -DWITH_XRANDR_MONITORS:BOOL="ON" \
-  -DWITH_XRENDER:BOOL="ON"       \
-  -DWITH_XRM:BOOL="ON"           \
-  -DWITH_XSYNC:BOOL="ON"         \
-  .. && make && sudo make install
+cd polybar && ./build.sh --auto --all-features
+# cd polybar && mkdir build && cd build && \
+# cmake                            \
+#   -DCMAKE_C_COMPILER="clang"     \
+#   -DCMAKE_CXX_COMPILER="clang++" \
+#   -DENABLE_ALSA:BOOL="ON"        \
+#   -DENABLE_I3:BOOL="ON"          \
+#   -DENABLE_MPD:BOOL="ON"         \
+#   -DENABLE_NETWORK:BOOL="ON"     \
+#   -DENABLE_CURL:BOOL="ON"        \
+#   -DBUILD_IPC_MSG:BOOL="ON"      \
+#   -DWITH_XCOMPOSITE:BOOL="ON"    \
+#   -DWITH_XCURSOR:BOOL="ON"       \
+#   -DWITH_XDAMAGE:BOOL="ON"       \
+#   -DWITH_XKB:BOOL="ON"           \
+#   -DWITH_XRANDR:BOOL="ON"        \
+#   -DWITH_XRANDR_MONITORS:BOOL="ON" \
+#   -DWITH_XRENDER:BOOL="ON"       \
+#   -DWITH_XRM:BOOL="ON"           \
+#   -DWITH_XSYNC:BOOL="ON"         \
+#   .. && make && sudo make install
 
 # Linux theme
 echo 'Seting up themes'
@@ -87,20 +89,20 @@ cd $BASE_DIR
 # Link all config files
 echo 'Link config files'
 mkdir ~/.config
-for config in .config/*; do
-    ln -s ~/.config/$(basename "$config") config;
+for config in $BASE_DIR/.config/*; do
+    ln -s "$config" ~/.config/$(basename "$config");
 done
 
-ln -s ~/.tmux .tmux
-ln -s ~/.tmux.conf .tmux.conf
+ln -s .tmux ~/.tmux
+ln -s .tmux.conf ~/.tmux.conf
 
-ln -s ~/.vim .vim
-ln -s ~/.vimrc .vimrc
+ln -s .vim ~/.vim
+ln -s .vimrc ~/.vimrc
 
-ln -s ~/.fehbg .fehbg
-ln -s ~/.tigrc .tigrc
-ln -s ~/.Xresources .Xresources
-ln -s ~/.xscreensaver .xscreensaver
+ln -s .fehbg ~/.fehbg
+ln -s .tigrc ~/.tigrc
+ln -s .Xresources ~/.Xresources
+ln -s .xscreensaver ~/.xscreensaver
 
 # Configure git
 echo 'Configure git'
