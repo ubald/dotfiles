@@ -279,7 +279,7 @@ set_from_resource $alert theme.alert #FF0000
 client.focused          $active_background $active_background $active_foreground $active_background $active_background
 client.focused_inactive $inactive_background $inactive_background $inactive_foreground $inactive_background $inactive_background
 client.unfocused        $unfocused_background $unfocused_background $unfocused_foreground $unfocused_background $unfocused_background
-client.urgent           $red $red $active_foreground $red $red
+client.urgent           $alert $alert $active_foreground $alert $alert
 client.placeholder      $unfocused_background $unfocused_background $unfocused_foreground $unfocused_background $unfocused_background
 client.background       $background
 
@@ -304,13 +304,13 @@ exec --no-startup-id "xscreensaver"
 # Dropbox
 # exec --no-startup-id "$HOME/.dropbox-dist/dropboxd"
 # Compton
-exec --no-startup-id "compton --config ~/.config/compton.conf -b"
+# exec --no-startup-id "compton --config ~/.config/compton.conf -b"
 # Polybar
-exec_always --no-startup-id "$HOME/.config/polybar/polybar.sh"
+# exec_always --no-startup-id "$HOME/.config/polybar/polybar.sh"
 # Disable Nautilus desktop
-exec --no-startup-id "gsettings set org.gnome.desktop.background show-desktop-icons false"
+# exec --no-startup-id "gsettings set org.gnome.desktop.background show-desktop-icons false"
 # Jetbrains Toolbox
-exec --no-startup-id "$HOME/.local/share/JetBrains/Toolbox/bin/jetbrains-toolbox"
+# exec --no-startup-id "$HOME/.local/share/JetBrains/Toolbox/bin/jetbrains-toolbox"
 
 # Natural Scrolling
 # exec --no-startup-id "xinput set-prop 9 293 1"
