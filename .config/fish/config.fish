@@ -38,6 +38,9 @@ set fish_color_status red
 set fish_color_valid_path cyan
 
 alias vim="nvim"
+alias cat="bat"
+alias ping="prettyping"
+
 export EDITOR='vim'
 
 #set -gx PATH ~/Library/Python/3.6/bin $PATH

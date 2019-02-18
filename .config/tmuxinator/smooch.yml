@@ -55,6 +55,17 @@ windows:
       layout: main-horizontal
       panes:
         - npm run ts:watch
+  - Runner:
+      name: Runner
+      root: ~/Workspace/smooch
+      layout: main-horizontal
+      panes:
+        - app:
+          - cd .
+        - web:
+          - cd .
+        - workers:
+          - cd .
   - Docker:
       name: Docker
       root: ~/Workspace/smooch

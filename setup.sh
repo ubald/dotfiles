@@ -12,7 +12,7 @@ sudo apt install --assume-yes \
   git tig \
   build-essential clang cmake cmake-curses-gui \
   xfonts-terminus fonts-firacode fonts-inconsolata \
-  silversearcher-ag
+  silversearcher-ag fzf bat prettyping
 
 # i3
 echo 'Installing i3 and dependencies'
