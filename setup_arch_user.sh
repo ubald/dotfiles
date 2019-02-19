@@ -11,6 +11,7 @@ for config in $BASE_DIR/.config/*; do
 done
 
 ln -s $BASE_DIR/.fehbg ~/.fehbg
+ln -s $BASE_DIR/.gitconfig ~/.gitconfig
 ln -s $BASE_DIR/.tigrc ~/.tigrc
 ln -s $BASE_DIR/.tmux ~/.tmux
 ln -s $BASE_DIR/.tmux.conf ~/.tmux.conf
