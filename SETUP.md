@@ -51,3 +51,28 @@ https://www.dropbox.com/install-linux
     fzf
     ag (the silver searcher)
 
+
+# ArchLinux
+
+## Good to backup
+
+* /etc/packman.d/mirrorlist
+
+## Add to dotfiles
+
+* ~/.xinitrc
+
+
+## Setup
+
+    pacman -S fish
+    useradd -m -s /usr/bin/fish ubald
+    passwd ubald
+    echo "ubald ALL=(ALL) ALL" > /etc/sudoers.d/01_ubald
+
+    pacman --noconfirm -S git vim
+    
+    pacman --noconfirm -S xorg-server xorg-xinit i3-wm rxvt-unicode
+    pacman --noconfirm -S terminus-font
+    pacman --noconfirm -S xf86-video-vmware xf86-video-fbdev xf86-video-vesa # For virtual machine
+    
