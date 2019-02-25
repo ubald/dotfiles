@@ -29,8 +29,8 @@ sudo apt install --assume-yes \
   vim \
   git tig \
   build-essential clang cmake cmake-curses-gui \
-  xfonts-terminus fonts-firacode \
-  silversearcher-ag fzf bat prettyping
+  xfonts-terminus fonts-firacode # \
+  # TODO: Custom installation scripts: silversearcher-ag fzf bat prettyping
 
 # Use fish by default
 chsh -s $(which fish)
