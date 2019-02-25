@@ -5,7 +5,7 @@ BASE_DIR=$PWD
 
 # Link all config files
 echo 'Link config files'
-mkdir ~/.config
+mkdir -p ~/.config
 for config in $BASE_DIR/.config/*; do
     ln -s "$config" ~/.config/$(basename "$config");
 done
