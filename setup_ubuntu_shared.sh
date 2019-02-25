@@ -39,7 +39,7 @@ chsh -s $(which fish)
 echo 'Seting up themes'
 sudo apt-add-repository ppa:numix/ppa
 sudo apt update
-sudo apt install --assume-yes numix-icon-theme-circle
+sudo apt install --assume-yes numix-icon-theme-circle arc-theme
 
 # Toilet Fun
 echo 'Seting toilet'
