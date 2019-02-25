@@ -7,19 +7,19 @@ BASE_DIR=$PWD
 echo 'Link config files'
 mkdir -p ~/.config
 for config in $BASE_DIR/.config/*; do
-    ln -s "$config" ~/.config/$(basename "$config");
+    ln -is "$config" ~/.config/$(basename "$config");
 done
 
-ln -s $BASE_DIR/.fehbg ~/.fehbg
-ln -s $BASE_DIR/.gitconfig ~/.gitconfig
-ln -s $BASE_DIR/.gtkrc-2.0 ~/.gtkrc-2.0
-ln -s $BASE_DIR/.tigrc ~/.tigrc
-ln -s $BASE_DIR/.tmux ~/.tmux
-ln -s $BASE_DIR/.tmux.conf ~/.tmux.conf
-ln -s $BASE_DIR/.vim ~/.vim
-ln -s $BASE_DIR/.vimrc ~/.vimrc
-ln -s $BASE_DIR/.xscreensaver ~/.xscreensaver
-ln -s $BASE_DIR/.Xresources ~/.Xresources
+ln -is $BASE_DIR/.fehbg ~/.fehbg
+ln -is $BASE_DIR/.gitconfig ~/.gitconfig
+ln -is $BASE_DIR/.gtkrc-2.0 ~/.gtkrc-2.0
+ln -is $BASE_DIR/.tigrc ~/.tigrc
+ln -is $BASE_DIR/.tmux ~/.tmux
+ln -is $BASE_DIR/.tmux.conf ~/.tmux.conf
+ln -is $BASE_DIR/.vim ~/.vim
+ln -is $BASE_DIR/.vimrc ~/.vimrc
+ln -is $BASE_DIR/.xscreensaver ~/.xscreensaver
+ln -is $BASE_DIR/.Xresources ~/.Xresources
 
 # Essentials
 echo 'Installing essentials'
