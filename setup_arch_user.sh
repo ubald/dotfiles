@@ -3,13 +3,13 @@ set -e
 
 BASE_DIR=$PWD
 
-# Link all config files
-echo 'Link config files'
+# Link .config files
 mkdir ~/.config
 for config in $BASE_DIR/.config/*; do
     ln -s "$config" ~/.config/$(basename "$config");
 done
 
+# Link other config files
 ln -s $BASE_DIR/.fehbg ~/.fehbg
 ln -s $BASE_DIR/.gitconfig ~/.gitconfig
 ln -s $BASE_DIR/.tigrc ~/.tigrc
