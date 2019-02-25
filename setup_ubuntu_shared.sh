@@ -25,7 +25,7 @@ ln -s $BASE_DIR/.Xresources ~/.Xresources
 echo 'Installing essentials'
 sudo apt install --assume-yes \
   ssh apt-transport-https \
-  terminator fish \
+  terminator fish tmux \
   vim \
   git tig \
   build-essential clang cmake cmake-curses-gui \
