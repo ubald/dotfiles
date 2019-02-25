@@ -7,25 +7,25 @@ BASE_DIR=$PWD
 echo 'Link config files'
 mkdir -p ~/.config
 for config in $BASE_DIR/.config/*; do
-    ln -is "$config" ~/.config/$(basename "$config");
+    ln -fs "$config" ~/.config/$(basename "$config");
 done
 
-ln -is $BASE_DIR/.fehbg ~/.fehbg
-ln -is $BASE_DIR/.gitconfig ~/.gitconfig
-ln -is $BASE_DIR/.gtkrc-2.0 ~/.gtkrc-2.0
-ln -is $BASE_DIR/.tigrc ~/.tigrc
-ln -is $BASE_DIR/.tmux ~/.tmux
-ln -is $BASE_DIR/.tmux.conf ~/.tmux.conf
-ln -is $BASE_DIR/.vim ~/.vim
-ln -is $BASE_DIR/.vimrc ~/.vimrc
-ln -is $BASE_DIR/.xscreensaver ~/.xscreensaver
-ln -is $BASE_DIR/.Xresources ~/.Xresources
+ln -fs $BASE_DIR/.fehbg ~/.fehbg
+ln -fs $BASE_DIR/.gitconfig ~/.gitconfig
+ln -fs $BASE_DIR/.gtkrc-2.0 ~/.gtkrc-2.0
+ln -fs $BASE_DIR/.tigrc ~/.tigrc
+ln -fs $BASE_DIR/.tmux ~/.tmux
+ln -fs $BASE_DIR/.tmux.conf ~/.tmux.conf
+ln -fs $BASE_DIR/.vim ~/.vim
+ln -fs $BASE_DIR/.vimrc ~/.vimrc
+ln -fs $BASE_DIR/.xscreensaver ~/.xscreensaver
+ln -fs $BASE_DIR/.Xresources ~/.Xresources
 
 # Essentials
 echo 'Installing essentials'
 sudo apt install --assume-yes \
   ssh apt-transport-https \
-  terminator fish tmux \
+  terminator fish tmux ranger \
   vim \
   git tig \
   build-essential clang cmake cmake-curses-gui \
@@ -56,6 +56,6 @@ echo 'Installing powerline font'
 cd $BASE_DIR
 wget -O powerline-fonts.zip https://github.com/powerline/fonts/archive/master.zip
 unzip powerline-fonts.zip
-./powerline-fonts/install.sh
-rm -rf powerline-fonts
+./fonts-master/install.sh
+rm -rf fonts-master
 rm powerline-fonts.zip
