@@ -47,7 +47,7 @@ sudo apt install --assume-yes toilet fortunes fortunes-off fortunes-spam
 
 # Bitmap fonts
 echo 'Enable bitmap fonts'
-sudo ln -s /etc/fonts/conf.avail/70-yes-bitmaps.conf /etc/fonts/conf.d/
+sudo ln -fs /etc/fonts/conf.avail/70-yes-bitmaps.conf /etc/fonts/conf.d/
 sudo unlink /etc/fonts/conf.d/70-no-bitmaps.conf
 sudo dpkg-reconfigure fontconfig
 
