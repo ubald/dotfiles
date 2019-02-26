@@ -48,7 +48,9 @@ sudo apt install --assume-yes toilet fortunes fortunes-off fortunes-spam
 # Bitmap fonts
 echo 'Enable bitmap fonts'
 sudo ln -fs /etc/fonts/conf.avail/70-yes-bitmaps.conf /etc/fonts/conf.d/
+set +e
 sudo unlink /etc/fonts/conf.d/70-no-bitmaps.conf
+set -e
 sudo dpkg-reconfigure fontconfig
 
 # Powerline font
