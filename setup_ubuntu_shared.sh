@@ -61,3 +61,7 @@ unzip powerline-fonts.zip
 ./fonts-master/install.sh
 rm -rf fonts-master
 rm powerline-fonts.zip
+
+# Fun Extras
+wget https://raw.githubusercontent.com/so-fancy/diff-so-fancy/master/third_party/build_fatpack/diff-so-fancy
+sudo mv diff-so-fancy /usr/local/bin/
