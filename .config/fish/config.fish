@@ -59,3 +59,5 @@ end
 
 thefuck --alias | source
 set -xg FZF_DEFAULT_OPTS '--height 40% --layout=reverse --border'
+
+bass source /opt/ros/crystal/setup.bash
