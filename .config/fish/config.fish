@@ -60,4 +60,9 @@ end
 thefuck --alias | source
 set -xg FZF_DEFAULT_OPTS '--height 40% --layout=reverse --border'
 
+# ROS Linux
 bass source /opt/ros/crystal/setup.bash
+
+# Brew Mac
+set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
+

@@ -5,7 +5,7 @@ set -e
 systemctl enable --now dhcpcd.service
 
 # Get General Dependencies
-pacman --noconfirm -S sudo git vim fish
+pacman --noconfirm -S sudo git vim fish openssh
 pacman --noconfirm -S xorg xorg-xinit i3-wm rxvt-unicode
 pacman --noconfirm -S terminus-font
 
