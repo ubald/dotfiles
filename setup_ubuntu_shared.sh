@@ -27,24 +27,30 @@ ln -fs ~/.config/fish/conf.d.available/ubuntu.fish ~/.config/fish/conf.d/ubuntu.
 # Essentials
 echo 'Installing essentials'
 sudo apt install --assume-yes \
-  ssh apt-transport-https \
+  ssh apt-transport-https curl \
   terminator fish tmux ranger \
-  vim \
+  vim neovim \
   git tig \
   build-essential clang cmake cmake-curses-gui \
   xfonts-terminus fonts-firacode \
-  silversearcher-ag
-
+  silversearcher-ag thefuck
 # Use fish by default
 chsh -s $(which fish)
 # TOSO: add "omf install bass"
 # TODO: omf and bobthefish doesn't work
 
+# Editors
+wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+sudo apt update
+sudo apt install --assume-yes sublime-text
+
 # Linux theme
 echo 'Seting up themes'
 sudo apt-add-repository ppa:numix/ppa
+sudo add-apt-repository ppa:papirus/papirus
 sudo apt update
-sudo apt install --assume-yes numix-icon-theme-circle arc-theme gnome-tweak-tool gnome-shell-extensions
+sudo apt install --assume-yes numix-icon-theme-circle arc-theme papirus-icon-theme gnome-tweak-tool gnome-shell-extensions
 
 # Toilet Fun
 echo 'Seting toilet'
@@ -90,3 +96,6 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 echo 'Installing nerd font'
 mkdir -p ~/.local/share/fonts
 cd ~/.local/share/fonts && curl -fLo "Terminess (TTF) Nerd Font Complete Mono.ttf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Terminus/terminus-ttf-4.40.1/Regular/complete/Terminess%20%28TTF%29%20Nerd%20Font%20Complete%20Mono.ttf
+
+# OMF
+curl -L https://get.oh-my.fish | fish
