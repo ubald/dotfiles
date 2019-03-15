@@ -22,7 +22,7 @@ ln -fs $BASE_DIR/.xscreensaver ~/.xscreensaver
 ln -fs $BASE_DIR/.Xresources ~/.Xresources
 
 # Enable Fish config
-ln -fs ~/.config/fish/conf/conf.d.available/ubuntu.fish ~/.config/fish/conf/conf.d/ubuntu.fish
+ln -fs ~/.config/fish/conf.d.available/ubuntu.fish ~/.config/fish/conf.d/ubuntu.fish
 
 # Essentials
 echo 'Installing essentials'

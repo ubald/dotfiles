@@ -7,7 +7,7 @@ BASE_DIR=$PWD
 ./setup_ubuntu_shared.sh
 
 # Enable Fish config
-ln -fs ~/.config/fish/conf/conf.d.available/ubuntu.ros.fish ~/.config/fish/conf/conf.d/ubuntu.ros.fish
+ln -fs ~/.config/fish/conf.d.available/ubuntu.ros.fish ~/.config/fish/conf.d/ubuntu.ros.fish
 
 # ROS
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
