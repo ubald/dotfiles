@@ -21,6 +21,9 @@ ln -fs $BASE_DIR/.vimrc ~/.vimrc
 ln -fs $BASE_DIR/.xscreensaver ~/.xscreensaver
 ln -fs $BASE_DIR/.Xresources ~/.Xresources
 
+# Enable Fish config
+ln -fs ~/.config/fish/conf/conf.d.available/ubuntu.fish ~/.config/fish/conf/conf.d/ubuntu.fish
+
 # Essentials
 echo 'Installing essentials'
 sudo apt install --assume-yes \
@@ -29,17 +32,19 @@ sudo apt install --assume-yes \
   vim \
   git tig \
   build-essential clang cmake cmake-curses-gui \
-  xfonts-terminus fonts-firacode # \
-  # TODO: Custom installation scripts: silversearcher-ag fzf bat prettyping
+  xfonts-terminus fonts-firacode \
+  silversearcher-ag
 
 # Use fish by default
 chsh -s $(which fish)
+# TOSO: add "omf install bass"
+# TODO: omf and bobthefish doesn't work
 
 # Linux theme
 echo 'Seting up themes'
 sudo apt-add-repository ppa:numix/ppa
 sudo apt update
-sudo apt install --assume-yes numix-icon-theme-circle arc-theme
+sudo apt install --assume-yes numix-icon-theme-circle arc-theme gnome-tweak-tool gnome-shell-extensions
 
 # Toilet Fun
 echo 'Seting toilet'
@@ -63,5 +68,25 @@ rm -rf fonts-master
 rm powerline-fonts.zip
 
 # Fun Extras
+
+# Bat
+wget https://github.com/sharkdp/bat/releases/download/v0.10.0/bat_0.10.0_amd64.deb
+sudo dpkg -i bat_0.10.0_amd64.deb
+rm bat_0.10.0_amd64.deb
+
+# Prettyping
+wget https://raw.githubusercontent.com/denilsonsa/prettyping/master/prettyping
+sudo mv prettyping /usr/local/bin/
+
+# Diff So Fancy
 wget https://raw.githubusercontent.com/so-fancy/diff-so-fancy/master/third_party/build_fatpack/diff-so-fancy
 sudo mv diff-so-fancy /usr/local/bin/
+
+# fzf
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+
+# NerdFont
+echo 'Installing nerd font'
+mkdir -p ~/.local/share/fonts
+cd ~/.local/share/fonts && curl -fLo "Terminess (TTF) Nerd Font Complete Mono.ttf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Terminus/terminus-ttf-4.40.1/Regular/complete/Terminess%20%28TTF%29%20Nerd%20Font%20Complete%20Mono.ttf
