@@ -26,3 +26,9 @@ sudo apt install --assume-yes python3-argcomplete python3-colcon-common-extensio
 
 echo "source /opt/ros/$CHOOSE_ROS_DISTRO/setup.bash" >> ~/.bashrc
 source ~/.bashrc
+
+# Gazebo
+sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
+wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
+sudo apt-get update
+sudo apt-get install --assume-yes gazebo9
