@@ -19,6 +19,7 @@
 [plugins]
 [profiles]
   [[default]]
+    allow_bold = False
     background_color = "#2d2d2d"
     background_darkness = 0.97
     background_type = transparent
