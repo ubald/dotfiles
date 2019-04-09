@@ -1,1 +1,0 @@
-/home/ubald/.zprezto/runcoms/zlogout
