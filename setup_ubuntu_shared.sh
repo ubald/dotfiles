@@ -82,6 +82,7 @@ rm bat_0.10.0_amd64.deb
 
 # Prettyping
 wget https://raw.githubusercontent.com/denilsonsa/prettyping/master/prettyping
+chmod +x prettyping
 sudo mv prettyping /usr/local/bin/
 
 # Diff So Fancy

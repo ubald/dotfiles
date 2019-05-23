@@ -48,16 +48,16 @@ windows:
       root: ~/
   - Repository:
       name: Repository
-      root: ~/Workspace/smooch
+      root: ~/src/smooch
   - Compiler:
       name: Compiler
-      root: ~/Workspace/smooch
+      root: ~/src/smooch
       layout: main-horizontal
       panes:
         - npm run ts:watch
   - Runner:
       name: Runner
-      root: ~/Workspace/smooch
+      root: ~/src/smooch
       layout: main-horizontal
       panes:
         - app:
@@ -68,12 +68,12 @@ windows:
           - cd .
   - Docker:
       name: Docker
-      root: ~/Workspace/smooch
+      root: ~/src/smooch
       panes:
-        - docker-compose -p workspace -f docker/docker-compose-dev.yml up
+        - docker-compose -f docker/docker-compose-dev.yml up
   - ngrok:
       name: ngrok
-      root: ~/Workspace/webhooks
+      root: ~/src/webhooks
       layout: main-horizontal
       panes:
         - ngrok start --all
