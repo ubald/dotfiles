@@ -4,7 +4,7 @@ set -e
 BASE_DIR=$PWD
 
 # Shared dependencies for all Ubuntu installs
-./setup_ubuntu_shared.sh
+# ./setup_ubuntu_shared.sh
 
 # Enable Fish config
 ln -fs ~/.config/fish/conf.d.available/ubuntu.ros.fish ~/.config/fish/conf.d/ubuntu.ros.fish
