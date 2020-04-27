@@ -47,10 +47,10 @@ sudo apt install --assume-yes sublime-text
 
 # Linux theme
 echo 'Seting up themes'
-sudo apt-add-repository ppa:numix/ppa
+# sudo apt-add-repository ppa:numix/ppa Doesn't work anymore
 sudo add-apt-repository ppa:papirus/papirus
 sudo apt update
-sudo apt install --assume-yes numix-icon-theme-circle arc-theme papirus-icon-theme gnome-tweak-tool gnome-shell-extensions
+sudo apt install --assume-yes numix-gtk-theme numix-icon-theme numix-icon-theme-circle arc-theme papirus-icon-theme gnome-tweak-tool gnome-shell-extensions
 
 # Toilet Fun
 echo 'Seting toilet'
@@ -76,9 +76,9 @@ rm powerline-fonts.zip
 # Fun Extras
 
 # Bat
-wget https://github.com/sharkdp/bat/releases/download/v0.10.0/bat_0.10.0_amd64.deb
-sudo dpkg -i bat_0.10.0_amd64.deb
-rm bat_0.10.0_amd64.deb
+wget https://github.com/sharkdp/bat/releases/download/v0.15.0/bat_0.15.0_amd64.deb
+sudo dpkg -i bat_0.15.0_amd64.deb
+rm bat_0.15.0_amd64.deb
 
 # Prettyping
 wget https://raw.githubusercontent.com/denilsonsa/prettyping/master/prettyping
