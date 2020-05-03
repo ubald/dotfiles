@@ -1,7 +1,9 @@
 # ~/.tmuxinator/mildred.yml
 
 name: mildred
-root: ~
+root: ~/src/mildred
+on_project_start: rosclean purge -y
+pre_window: bass source devel/setup.bash 
 
 # Optional tmux socket
 # socket_name: foo
@@ -44,8 +46,12 @@ root: ~
 
 windows:
   - Terminal:
-      name: Terminal
-      root: ~/
   - Repository:
-      name: Repository
-      root: ~/src/mildred
+  - ROSCore:
+      panes:
+        - roscore
+  - Teleop:
+  - Description:
+  - Control:
+  - Simulation:
+  - Dynamixels:
