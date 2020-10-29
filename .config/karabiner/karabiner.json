@@ -856,18 +856,18 @@
                         },
                         {
                             "from": {
-                                "key_code": "left_control"
-                            },
-                            "to": {
-                                "key_code": "caps_lock"
-                            }
-                        },
-                        {
-                            "from": {
                                 "key_code": "delete_or_backspace"
                             },
                             "to": {
                                 "key_code": "backslash"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "left_control"
+                            },
+                            "to": {
+                                "key_code": "caps_lock"
                             }
                         }
                     ]

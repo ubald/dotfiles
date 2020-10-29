@@ -4,3 +4,5 @@ source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.in
 alias smooch_clean="rm -rf ./dist; mkdir ./dist; ln -s $PWD/resources $PWD/dist/resources; ln -s $PWD/views $PWD/dist/views"
 alias smooch_update="smooch_clean; npm install"
 alias smooch_reset="rm -rf ./node_modules; smooch_update"
+
+rvm default
