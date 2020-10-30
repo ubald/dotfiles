@@ -1,12 +1,18 @@
 # Theme
+set -g theme_display_git yes
+set -g theme_display_git_dirty yes
+set -g theme_display_git_untracked yes
+set -g theme_display_k8s_context yes
+set -g theme_display_k8s_namespace yes
+set -g theme_display_virtualenv yes
+set -g theme_display_nix yes
+set -g theme_display_ruby yes
 set -g theme_display_user ssh
 set -g theme_display_hostname ssh
 set -g theme_display_date no
 set -g theme_title_display_process yes
 set -g theme_powerline_fonts yes
 set -g theme_nerd_fonts yes
-set -g theme_display_k8s_context yes
-set -g theme_display_git yes
 
 # Colors
 set fish_color_normal normal
@@ -59,3 +65,4 @@ end
 
 thefuck --alias | source
 set -xg FZF_DEFAULT_OPTS '--height 40% --layout=reverse --border'
+set -xg VIRTUAL_ENV_DISABLE_PROMPT '1'
