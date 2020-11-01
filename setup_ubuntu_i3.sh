@@ -1,10 +1,12 @@
-#!/bin/sh
+#!/usr/bin/env bash
 set -e
 
-BASE_DIR=$PWD
+source setup/ubuntu_graphical.sh
 
-# Shared dependencies for all Ubuntu installs
-./setup_ubuntu_shared.sh
+link_configs dunst i3 i3status polybar rofi compton.conf
+link_dotfiles fehbg gtkrc-2.0 xscreensaver Xresources
+
+BASE_DIR=$PWD
 
 # i3
 echo 'Installing i3 and dependencies'
@@ -23,6 +25,7 @@ if [ -d polybar ]; then
 fi
 git clone --recurse-submodules https://github.com/jaagr/polybar.git
 cd polybar && ./build.sh --auto --all-features
+cd $BASE_DIR
 
 # Theming Utils
 echo 'Installing theming utilities'
@@ -34,10 +37,7 @@ if [ -d siji ]; then
     rm -rf siji
 fi
 git clone --recurse-submodules https://github.com/stark/siji && cd siji && ./install.sh -d ~/.fonts
-
 cd $BASE_DIR
 
 # Manage ssh-agent with keychain
 sudo apt install --assume-yes keychain
-#echo "# ssh-agent at first launch of zsh
-#eval \`keychain --eval --agents ssh id_rsa\`" >> ~/.zshrc

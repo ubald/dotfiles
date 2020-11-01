@@ -49,6 +49,8 @@ set "message-command-bg" "$onedark_black"
 set "status-attr" "none"
 set "status-left-attr" "none"
 
+=> *** a:b A:B
+
 setw "window-status-fg" "$onedark_black"
 setw "window-status-bg" "$onedark_black"
 setw "window-status-attr" "none"
@@ -59,8 +61,10 @@ setw "window-status-activity-attr" "none"
 
 setw "window-status-separator" ""
 
-set "window-style" "fg=$onedark_comment_grey,bg=$onedark_black"
-set "window-active-style" "fg=$onedark_white,bg=$onedark_black"
+# set "window-style" "fg=$onedark_comment_grey,bg=$onedark_black"
+set "window-style" "fg=$onedark_comment_grey,bg=default"
+# set "window-active-style" "fg=$onedark_white,bg=$onedark_black"
+set "window-active-style" "fg=$onedark_white,bg=default"
 
 set "pane-border-fg" "$onedark_white"
 set "pane-active-border-fg" "$onedark_white"
