@@ -49,8 +49,6 @@ set "message-command-bg" "$onedark_black"
 set "status-attr" "none"
 set "status-left-attr" "none"
 
-=> *** a:b A:B
-
 setw "window-status-fg" "$onedark_black"
 setw "window-status-bg" "$onedark_black"
 setw "window-status-attr" "none"
