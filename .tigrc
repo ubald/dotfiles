@@ -1,3 +1,5 @@
 color cursor black green
 color title-focus black blue
-color title-blur black white 
+color title-blur black white
+
+bind status P !git push origin
