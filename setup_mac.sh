@@ -9,7 +9,7 @@ echo 'Installing essentials'
 brew install \
   fish tmux ranger \
   vim neovim \
-  git tig \
+  git tig gh \
   the_silver_searcher thefuck bat diff-so-fancy prettyping \
   font-fira-code font-firacode-nerd-font
 

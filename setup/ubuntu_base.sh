@@ -22,3 +22,9 @@ rm bat_0.16.0_amd64.deb
 
 # Toilet Fun
 sudo apt install --assume-yes toilet fortunes fortunes-off fortunes-spam
+
+# Github Command Line
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
+sudo apt-add-repository https://cli.github.com/packages
+sudo apt update
+sudo apt install --assume-yes gh
