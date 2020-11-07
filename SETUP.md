@@ -40,7 +40,7 @@ https://www.dropbox.com/install-linux
 # Enable defines in .Xresources (17.10)
 
     sudo vim /etc/gdm3/Xsession
-    Line 132, iremove option -nocpp for userresources
+    Line 132, remove option -nocpp for userresources
 
 # Misc
 

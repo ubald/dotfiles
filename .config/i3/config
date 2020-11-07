@@ -11,7 +11,12 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:terminus 8
+# Old-school bitmap font
+# font pango:terminus 8
+# OTB Format
+# font pango:Terminus Medium 5
+# 4k friendly
+font pango:JetBrainsMono Nerd Font 12
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -132,17 +137,17 @@ for_window [class="Nvidia-settings"] floating enable
 
 # use `xrandr` to list possible outputs
 
-#workspace 1:Term output DP-2
-#workspace 2:Code output DP-2
-#workspace 3 output DP-2
-#workspace 4 output DP-2
-#workspace 5 output DP-2
+workspace 1:Term output DP-4
+workspace 2:Code output DP-4
+workspace 3 output DP-4
+workspace 4 output DP-4
+workspace 5 output DP-4
 
-#workspace 6:Web output DP-4
-#workspace 7:Comms output DP-4
-#workspace 8:Media output DP-4
-#workspace 9 output DP-4
-#workspace 0 output DP-4
+workspace 6:Web output HDMI-0
+workspace 7:Comms output HDMI-0
+workspace 8:Media output HDMI-0
+workspace 9 output HDMI-0
+workspace 0 output HDMI-0
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -237,7 +242,7 @@ workspace_auto_back_and_forth yes
 set $locker xscreensaver-command -lock
 #set $locker i3lock -c 282c34 -i $wallpaper && sleep 1
 # bindsym $mod+l exec --no-startup-id i3lock -c 282c34 -i $wallpaper -t && sleep 1
-# Lock, Logout, Suspend, HIbernate, Reboot and Shutdown
+# Lock, Logout, Suspend, Hibernate, Reboot and Shutdown
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
     bindsym l exec --no-startup-id $locker, mode "default"
@@ -262,8 +267,8 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-# Keyboard Layout Switching
-bindsym $mod+Tab exec --no-startup-id dbus-send --dest=ru.gentoo.KbddService /ru/gentoo/KbddService ru.gentoo.kbdd.next_layout
+# Keyboard Layout Switching (deprecated, we use gnome-flashback instead)
+# bindsym $mod+Tab exec --no-startup-id dbus-send --dest=ru.gentoo.KbddService /ru/gentoo/KbddService ru.gentoo.kbdd.next_layout
 
 # i3 Colors
 set_from_resource $active_background theme.active.background #008CCC
@@ -287,28 +292,32 @@ client.background       $background
 # Monitor order
 # exec --no-startup-id "xrandr -d :1 --output DVI-I-1 --left-of DP-2 --output DP-4 --right-of DP-2"
 # Monitor color profile
-exec --no-startup-id "xiccd"
-# Desktop Wallpaper
-exec --no-startup-id "feh --bg-fill $wallpaper"
-# Pulse Audio
-exec --no-startup-id "pulseaudio --start"
-# Auto mount USB
-exec --no-startup-id "devmon --no-gui"
-# Network Manager
-exec --no-startup-id "nm-applet"
-# Keyboard
-exec --no-startup-id "setxkbmap -layout us,ca"
-exec --no-startup-id "kbdd"
+# exec --no-startup-id "xiccd"
+# Desktop Wallpaper (deprecated, we use gnome-flashback instead)
+# exec --no-startup-id "feh --bg-fill $wallpaper"
+# Pulse Audio (deprecated, we use gnome-flashback instead)
+# exec --no-startup-id "pulseaudio --start"
+# Auto mount USB (deprecated, we use gnome-flashback instead)
+# exec --no-startup-id "devmon --no-gui"
+# Network Manager (deprecated, we use gnome-flashback instead)
+# exec --no-startup-id "nm-applet"
+# Keyboard (deprecated, we use gnome-flashback instead)
+# exec --no-startup-id "setxkbmap -layout us,ca"
+# exec --no-startup-id "kbdd"
 # Screensaver
-exec --no-startup-id "xscreensaver"
+# exec --no-startup-id "xscreensaver"
 # Dropbox
 # exec --no-startup-id "$HOME/.dropbox-dist/dropboxd"
 # Compton
 # exec --no-startup-id "compton --config ~/.config/compton.conf -b"
 # Polybar
-# exec_always --no-startup-id "$HOME/.config/polybar/polybar.sh"
-# Disable Nautilus desktop
+exec_always --no-startup-id "$HOME/.config/polybar/polybar.sh"
+
+# Disable Nautilus and Gnome desktop
 # exec --no-startup-id "gsettings set org.gnome.desktop.background show-desktop-icons false"
+# exec --no-startup-id "gsettings set org.gnome.gnome-flashback desktop false"
+# exec --no-startup-id "gsettings set org.gnome.gnome-flashback root-background true"
+
 # Jetbrains Toolbox
 # exec --no-startup-id "$HOME/.local/share/JetBrains/Toolbox/bin/jetbrains-toolbox"
 

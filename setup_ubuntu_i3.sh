@@ -4,19 +4,29 @@ set -e
 source setup/ubuntu_graphical.sh
 
 link_configs dunst i3 i3status polybar rofi compton.conf
-link_dotfiles fehbg gtkrc-2.0 xscreensaver Xresources
+link_dotfiles fehbg gtkrc-2.0 xscreensaver Xresources xsession
 
-BASE_DIR=$PWD
+# Picom (formerly known as compton)
+sudo apt install --assume-yes meson ninja libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-render-util0-dev libxcb-render0-dev libxcb-randr0-dev libxcb-composite0-dev libxcb-image0-dev libxcb-present-dev libxcb-xinerama0-dev libxcb-glx0-dev libpixman-1-dev libdbus-1-dev libconfig-dev libgl1-mesa-dev libpcre3-dev libevdev-dev uthash-dev libev-dev libx11-xcb-dev
+git clone https://github.com/yshui/picom.git
+cd picom
+git checkout stable/8
+git submodules update --init --recursive
+meson --buildtype=release . build
+ninja -C build
+sudo ninja -C build install
+cd -
+rm -rf picom
 
 # i3
 echo 'Installing i3 and dependencies'
-sudo apt install --assume-yes i3 rofi xiccd feh udevil kbdd compton compton-conf
+sudo apt install --assume-yes i3 rofi feh xiccd udevil kbdd
 sudo apt install --assume-yes xscreensaver xscreensaver-data xscreensaver-data-extra xscreensaver-gl xscreensaver-gl-extra xscreensaver-screensaver-bsod
 
 # Polybar dependencies
 echo 'Installing Polybar dependencies'
 sudo apt install --assume-yes unifont ccache libcairo2-dev xcb-proto libasound2-dev libcurl4-openssl-dev libmpdclient-dev libiw-dev
-sudo apt install --assume-yes libxcb1-dev libxcb-xkb-dev libxcb-randr0-dev libxcb-util-dev libxcb-icccm4-dev libxcb-ewmh-dev libxcb-render0-dev libxcb-composite0-dev libxcb-sync-dev libxcb-damage0-dev libxcb-composite0-dev libxcb-xrm-dev libxcb-cursor-dev python-xcbgen
+sudo apt install --assume-yes libxcb1-dev libxcb-xkb-dev libxcb-randr0-dev libxcb-util-dev libxcb-icccm4-dev libxcb-ewmh-dev libxcb-render0-dev libxcb-composite0-dev libxcb-sync-dev libxcb-damage0-dev libxcb-composite0-dev libxcb-xrm-dev libxcb-cursor-dev python3-xcbgen libpulse-dev libjsoncpp-dev
 
 # Build polybar
 echo 'Building Polybar'
@@ -24,8 +34,9 @@ if [ -d polybar ]; then
     rm -rf polybar
 fi
 git clone --recurse-submodules https://github.com/jaagr/polybar.git
-cd polybar && ./build.sh --auto --all-features
-cd $BASE_DIR
+cd polybar
+./build.sh -f --auto --all-features
+cd -
 
 # Theming Utils
 echo 'Installing theming utilities'
@@ -36,8 +47,16 @@ echo 'Installing siji font'
 if [ -d siji ]; then
     rm -rf siji
 fi
-git clone --recurse-submodules https://github.com/stark/siji && cd siji && ./install.sh -d ~/.fonts
-cd $BASE_DIR
+git clone --recurse-submodules https://github.com/stark/siji
+cd siji
+./install.sh -d ~/.fonts
+cd -
+
+# Use i3 with gnome-flashback-session
+echo "Setup gnome flashback session"
+cd setup/gnome
+sudo make install
+cd -
 
 # Manage ssh-agent with keychain
-sudo apt install --assume-yes keychain
+# sudo apt install --assume-yes keychain

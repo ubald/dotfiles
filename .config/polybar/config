@@ -1,15 +1,6 @@
-;=====================================================
-;
-;   To learn more about how to configure Polybar
-;   go to https://github.com/jaagr/polybar
-;
-;   The README contains alot of information
-;
-;=====================================================
-
 [prefs]
-;left-monitor = ${env:MONITOR:DP-2}
-;right-monitor = ${env:MONITOR:DP-4}
+primary-monitor = ${env:MONITOR:DP-4}
+secondary-monitor = ${env:MONITOR:HDMI-0}
 
 [bar/base]
 width = 100%
@@ -54,15 +45,15 @@ tray-background = ${xrdb:colors.background}
 
 [bar/default]
 inherit = bar/base
-;monitor = ${prefs.left-monitor}
+monitor = ${prefs.primary-monitor}
 modules-right = xkeyboard eth volume memory cpu temperature date
 tray-position = right
 tray-padding = 2
 
-;[bar/top-right]
-;inherit = bar/base
-;monitor = ${prefs.right-monitor}
-;modules-right =
+[bar/top-right]
+inherit = bar/base
+monitor = ${prefs.secondary-monitor}
+modules-right =
 
 [settings]
 screenchange-reload = true
@@ -298,7 +289,7 @@ menu-2-0-exec = sudo poweroff
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
 
-! UNUSED
+;! UNUSED
 
 [module/filesystem]
 type = internal/fs
