@@ -8,12 +8,13 @@ enable_fish_config ubuntu
 
 # Essentials
 sudo apt install --assume-yes \
-  ssh apt-transport-https curl \
+  ssh apt-transport-https curl net-tools \
   fish tmux ranger \
   vim neovim \
   git tig \
   build-essential clang cmake cmake-curses-gui \
-  silversearcher-ag thefuck
+  silversearcher-ag thefuck \
+  pavucontrol lm-sensors
 
 # Use fish by default
 chsh -s $(which fish)

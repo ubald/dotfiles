@@ -49,7 +49,8 @@ if [ -d siji ]; then
 fi
 git clone --recurse-submodules https://github.com/stark/siji
 cd siji
-./install.sh -d ~/.fonts
+# ./install.sh -d ~/.fonts
+./install.sh
 cd -
 
 # Use i3 with gnome-flashback-session

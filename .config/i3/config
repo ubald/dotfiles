@@ -14,15 +14,15 @@ set $mod Mod4
 # Old-school bitmap font
 # font pango:terminus 8
 # OTB Format
-# font pango:Terminus Medium 5
+font pango:Terminus Medium 8
 # 4k friendly
-font pango:JetBrainsMono Nerd Font 12
+# font pango:JetBrainsMono Nerd Font 12
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
 
-# Before i3 v4.8, we used to recommend this one as the default:
+# Beforke i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and
 # clear in small sizes. However, its unicode glyph coverage is limited, the old
@@ -231,12 +231,14 @@ bindsym $mod+r mode "resize"
 
 set $wallpaper ~/.config/i3/wallpaper.png
 
-new_window normal 0
-new_float normal 1
+default_border normal 1
+default_floating_border normal 1
 hide_edge_borders both
 focus_follows_mouse no
 mouse_warping none
 workspace_auto_back_and_forth yes
+title_align left
+show_marks yes
 
 # Lock
 set $locker xscreensaver-command -lock

@@ -12,8 +12,8 @@ foreground = ${xrdb:colors.foreground}
 line-size = 0
 line-color = #00000000
 
-;border-size = 4
-;border-color = #00000000
+border-bottom-size = 1
+border-bottom-color = #00000000
 
 padding-left = 0
 padding-right = 2
@@ -21,46 +21,30 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-;font-0 = fixed:pixelsize=10;1
-font-0 = terminus:pixelsize=8:antialias=false;1
-font-1 = unifont:fontformat=truetype:size=10:antialias=false;0
-font-2 = siji:pixelsize=8;1
-
+font-0 = terminus:pixelsize=8:antialias=false
+font-1 = unifont:fontformat=truetype:size=10:antialias=false
+font-2 = siji:pixelsize=8
+font-3 = Noto Color Emoji:style=Regular:scale=10
 modules-left = i3
 modules-center = xwindow
-
-;tray-transparent = true
+fixed-center = true
 tray-background = ${xrdb:colors.background}
 
-;wm-restack = bspwm
-;wm-restack = i3
 
-;override-redirect = true
-
-;scroll-up = bspwm-desknext
-;scroll-down = bspwm-deskprev
-
-;scroll-up = i3wm-wsnext
-;scroll-down = i3wm-wsprev
-
-[bar/default]
+[bar/primary]
 inherit = bar/base
 monitor = ${prefs.primary-monitor}
-modules-right = xkeyboard eth volume memory cpu temperature date
+modules-right = wlan eth volume filesystem memory cpu temperature xkeyboard date
 tray-position = right
 tray-padding = 2
 
-[bar/top-right]
+[bar/secondary]
 inherit = bar/base
 monitor = ${prefs.secondary-monitor}
 modules-right =
 
 [settings]
 screenchange-reload = true
-;compositing-background = xor
-;compositing-background = screen
-;compositing-foreground = source
-;compositing-border = over
 
 [global/wm]
 margin-top = 5
@@ -70,42 +54,59 @@ margin-bottom = 5
 type = internal/i3
 format = <label-state> <label-mode>
 index-sort = true
+enable-click = true
+enable-scroll = true
 wrapping-scroll = false
-
-; Only show workspaces on the same output as the bar
+reverse-scroll = false
 pin-workspaces = true
-;strip-wsnumbers = true
+strip-wsnumbers = true
 
+; ws-icon-0 = 1;♚
+; ws-icon-1 = 2;♛
+; ws-icon-2 = 3;♜
+; ws-icon-3 = 4;♝
+; ws-icon-4 = 5;♞
+; ws-icon-default = ♟
+
+label-mode = %mode%
 label-mode-padding = 2
 label-mode-foreground = ${xrdb:theme.active.foreground}
 label-mode-background = ${xrdb:theme.active.background}
 
 ; focused = Active workspace on focused monitor
-label-focused = %name%
+label-focused = %index% > %name%
 label-focused-foreground = ${xrdb:theme.active.foreground}
 label-focused-background = ${xrdb:theme.active.background}
-; label-focused-underline = ${}
+label-focused-underline = #FF0000
 label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
-label-unfocused = %name%
+label-unfocused = %index% > %name%
 label-unfocused-padding = 2
+;label-unfocused-foreground = ${xrdb:theme.active.foreground}
+;label-unfocused-background = ${xrdb:theme.active.background}
 
 ; visible = Active workspace on unfocused monitor
-label-visible = %name%
-label-visible-background = ${xrdb:theme.inactive.background}
-label-visible-foreground = ${xrdb:theme.inactive.foreground}
+label-visible = %index% > %name%
+; label-visible-foreground = ${xrdb:theme.inactive.foreground}
+; label-visible-background = ${xrdb:theme.inactive.background}
 ; label-visible-underline = ${}
 label-visible-padding = 2
 
 ; urgent = Workspace with urgency hint set
-label-urgent = %name%
+label-urgent = %index% > %name%
+; label-urgent-foreground = ${xrdb:theme.inactive.foreground}
 label-urgent-background = ${xrdb:theme.alert}
 label-urgent-padding = 2
 
+; Separator in between workspaces
+; label-separator = |
+; label-separator-padding = 3
+; label-separator-foreground = ${xrdb:colors.blue}
+
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:30:...%
+label = %title%
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -124,11 +125,10 @@ label-indicator-background = ${xrdb:theme.foreground}
 ; label-indicator-underline = ${}
 
 [module/volume]
-type = internal/volume
-
+type = internal/pulseaudio
 format-volume = <ramp-volume> <bar-volume> <label-volume>
 label-volume-foreground = ${xrdb:theme.foreground}
-
+click-right = pavucontrol &
 format-muted-prefix = " "
 format-muted-prefix-foreground = ${xrdb:theme.alert}
 
@@ -154,9 +154,37 @@ bar-volume-empty = █
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${xrdb:theme.empty}
 
+[module/wlan]
+type = internal/network
+interface = wlo1
+interval = 3.0
+
+format-connected = <label-connected> <ramp-signal>
+format-connected-underline = #9f78e1
+label-connected =  %upspeed%  %downspeed% %local_ip% %essid%  
+
+format-disconnected =
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${xrdb:theme.foreground}
+
+; ramp-signal-0 = 
+; ramp-signal-1 = 
+; ramp-signal-2 = 
+; ramp-signal-3 = 
+; ramp-signal-4 = 
+ramp-signal-0 = 😱
+ramp-signal-1 = 😠
+ramp-signal-2 = 😒
+ramp-signal-3 = 😊
+ramp-signal-4 = 😃
+ramp-signal-5 = 😈
+ramp-signal-foreground = ${xrdb:theme.foreground}
+
 [module/eth]
 type = internal/network
-interface = enp3s0
+interface = enp39s0
 interval = 3.0
 
 format-connected-underline = ${xrdb:colors.green}
@@ -170,7 +198,6 @@ format-disconnected =
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${xrdb:theme.foreground}
 
-
 [module/temperature]
 type = internal/temperature
 thermal-zone = 0
@@ -181,8 +208,8 @@ format-underline = #f50a4d
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
 
-label = %temperature%
-label-warn = %temperature%
+label = %temperature-c%
+label-warn = %temperature-c%
 label-warn-foreground = ${xrdb:colors.orange}
 
 ramp-0 = 
@@ -194,11 +221,11 @@ ramp-2-foreground = ${xrdb:colors.red}
 
 [module/cpu]
 type = internal/cpu
-interval = 2
+interval = 1
+format = <bar-load> <ramp-coreload> <label>
 format-prefix = " "
 format-prefix-foreground = ${xrdb:theme.highlight}
 format-underline = #f90000
-format = <bar-load> <label>
 label = %percentage%%
 bar-load-indicator =
 bar-load-width = 11
@@ -218,6 +245,12 @@ ramp-load-4 = ▅
 ramp-load-5 = ▆
 ramp-load-6 = ▇
 ramp-load-7 = █
+ramp-coreload-spacing = 0
+ramp-coreload-0-foreground = ${xrdb:colors.green}
+ramp-coreload-1-foreground = ${xrdb:colors.green}
+ramp-coreload-2-foreground = ${xrdb:colors.yellow}
+ramp-coreload-3-foreground = ${xrdb:colors.orange}
+ramp-coreload-4-foreground = ${xrdb:colors.red}
 ramp-coreload-0 = ▁
 ramp-coreload-1 = ▂
 ramp-coreload-2 = ▃
@@ -232,7 +265,6 @@ type = internal/memory
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${xrdb:theme.highlight}
-format-underline = #4bffdc
 label = %percentage_used%%
 format = <bar-used> <label>
 bar-used-indicator =
@@ -246,21 +278,29 @@ bar-used-fill = █
 bar-used-empty = █
 bar-used-empty-foreground = ${xrdb:theme.empty}
 
+[module/filesystem]
+type = internal/fs
+interval = 30
+mount-0 = /
+fixed-values = true
+label-mounted = %{F#0a81f5}%mountpoint%%{F-} %percentage_used%%
+label-unmounted = %mountpoint% not mounted
+label-unmounted-foreground = ${xrdb:theme.foreground}
+
 [module/date]
 type = internal/date
 interval = 1.0
-
-date = " %Y-%m-%d"
+date = %Y-%m-%d
 date-alt =
-
 time = %H:%M:%S
 time-alt = %H:%M:%S
-
-format-prefix = 
+format-prefix = " "
 format-prefix-foreground = ${xrdb:theme.highlight}
-format-underline = #0a6cf5
-
 label = %date% %time%
+
+
+
+;! UNUSED
 
 [module/powermenu]
 type = custom/menu
@@ -289,39 +329,7 @@ menu-2-0-exec = sudo poweroff
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
 
-;! UNUSED
 
-[module/filesystem]
-type = internal/fs
-interval = 25
-
-mount-0 = /
-
-label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
-label-unmounted = %mountpoint% not mounted
-label-unmounted-foreground = ${xrdb:theme.foreground}
-
-[module/wlan]
-type = internal/network
-interface = net1
-interval = 3.0
-
-format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #9f78e1
-label-connected = %essid%
-
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${xrdb:theme.foreground}
-
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-ramp-signal-foreground = ${xrdb:theme.foreground}
 
 [module/network]
 type = internal/network
@@ -329,85 +337,3 @@ interface = enp3s0
 interval = 1.0
 accumulate-stats = false
 format-prefix-foreground = ${xrdb:theme.foreground}
-
-[module/battery]
-type = internal/battery
-battery = BAT0
-adapter = ADP1
-full-at = 98
-
-format-charging = <animation-charging> <label-charging>
-format-charging-underline = #ffb52a
-
-format-discharging = <ramp-capacity> <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
-
-format-full-prefix = " "
-format-full-prefix-foreground = ${xrdb:theme.foreground}
-format-full-underline = ${self.format-charging-underline}
-
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-foreground = ${xrdb:theme.foreground}
-
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-foreground = ${xrdb:theme.foreground}
-animation-charging-framerate = 750
-
-[module/backlight-acpi]
-inherit = module/xbacklight
-type = internal/backlight
-card = intel_backlight
-
-[module/mpd]
-type = internal/mpd
-format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
-
-icon-prev = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
-
-label-song-maxlen = 25
-label-song-ellipsis = true
-
-[module/xbacklight]
-type = internal/xbacklight
-
-format = <label> <bar>
-label = BL
-
-bar-width = 10
-bar-indicator = |
-bar-indicator-foreground = #ff
-bar-indicator-font = 2
-bar-fill = ─
-bar-fill-font = 2
-bar-fill-foreground = #9f78e1
-bar-empty = ─
-bar-empty-font = 2
-bar-empty-foreground = ${xrdb:theme.empty}
-
-[module/bspwm]
-type = internal/bspwm
-
-label-focused = %index%
-label-focused-foreground = #000000
-label-focused-background = ${xrdb:theme.background}
-label-focused-underline= ${xrdb:theme.highlight}
-label-focused-padding = 2
-
-label-occupied = %index%
-label-occupied-padding = 2
-
-label-urgent = %index%!
-label-urgent-background = ${xrdb:theme.alert}
-label-urgent-padding = 2
-
-label-empty = %index%
-label-empty-foreground = ${xrdb:theme.empty}
-label-empty-padding = 2
