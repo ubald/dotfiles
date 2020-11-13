@@ -6,6 +6,7 @@ set -g theme_display_k8s_context yes
 set -g theme_display_k8s_namespace yes
 set -g theme_display_virtualenv yes
 set -g theme_display_nix yes
+set -g theme_display_nvm yes
 set -g theme_display_ruby yes
 set -g theme_display_user ssh
 set -g theme_display_hostname ssh
@@ -66,3 +67,5 @@ end
 thefuck --alias | source
 set -xg FZF_DEFAULT_OPTS '--height 40% --layout=reverse --border'
 set -xg VIRTUAL_ENV_DISABLE_PROMPT '1'
+
+load_nvm

@@ -1,0 +1,1 @@
+/home/ubald/.config/fish/conf.d.available/linux.fish

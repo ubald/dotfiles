@@ -6,6 +6,7 @@
   title_transmit_fg_color = "#2d2d2d"
   title_transmit_bg_color = "#22cfff"
   title_inactive_bg_color = "#65737e"
+  smart_copy = False
 [keybindings]
 [profiles]
   [[default]]
@@ -22,6 +23,7 @@
     scrollbar_position = hidden
     scrollback_lines = 5000
     palette = "#2d2d2d:#f2777a:#99cc99:#ffcc66:#6699cc:#cc99cc:#66cccc:#d3d0c8:#747369:#f2777a:#99cc99:#ffcc66:#6699cc:#cc99cc:#66cccc:#f2f0ec"
+    custom_command = tmux
     use_system_font = False
     copy_on_selection = True
 [layouts]
@@ -30,8 +32,8 @@
       parent = window0
       profile = default
       type = Terminal
-      command = tmux
-      directory = ~
+      command = ""
+      directory = ""
     [[[window0]]]
       parent = ""
       type = Window
