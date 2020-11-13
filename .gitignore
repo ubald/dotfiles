@@ -2,9 +2,4 @@
 *.swp
 .idea/
 
-.config/fish/conf.d/macos.fish
-.config/fish/conf.d/ubuntu.fish
-.config/fish/conf.d/ubuntu.ros.fish
-.config/fish/conf.d/ubuntu.ros2.fish
-
 .config/karabiner/automatic_backups/

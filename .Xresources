@@ -37,16 +37,20 @@ colors.background: BACKGROUND
 colors.gutter: GUTTER
 
 ! THEME
-theme.active.background: BLUE_
-theme.active.foreground: BACKGROUND
-theme.inactive.background: DARK
-theme.inactive.foreground: BACKGROUND
-theme.unfocused.background: #222222
-theme.unfocused.foreground: #888888
+theme.active.foreground: #FFFFFF
+theme.active.background: #000000
+
+theme.inactive.foreground: #FFFFFF
+theme.inactive.background: BACKGROUND
+
+theme.unfocused.foreground: #CCCCCC
+theme.unfocused.background: BACKGROUND
+
 theme.foreground: FOREGROUND
+theme.background: BACKGROUND
+
 theme.highlight: BLUE_
 theme.alert: RED
-theme.background: BACKGROUND
 theme.empty: DARKER
 
 ! ROFI

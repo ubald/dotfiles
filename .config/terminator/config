@@ -16,7 +16,7 @@
     background_type = transparent
     cursor_shape = ibeam
     cursor_color = "#d3d0c8"
-    font = JetBrainsMono Nerd Font 10
+    font = JetBrainsMono Nerd Font Mono 10
     foreground_color = "#d3d0c8"
     show_titlebar = False
     scrollbar_position = hidden
@@ -30,6 +30,8 @@
       parent = window0
       profile = default
       type = Terminal
+      command = tmux
+      directory = ~
     [[[window0]]]
       parent = ""
       type = Window

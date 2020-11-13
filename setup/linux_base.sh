@@ -17,5 +17,7 @@ chmod +x diff-so-fancy
 sudo mv diff-so-fancy /usr/local/bin/
 
 # fzf
+set +e
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
+set -e
+~/.fzf/install --all
