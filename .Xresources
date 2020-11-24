@@ -33,7 +33,7 @@ colors.red: RED
 colors.orange: ORANGE
 colors.yellow: YELLOW
 colors.foreground: FOREGROUND
-colors.background: BACKGROUND
+colors.background: #212121
 colors.gutter: GUTTER
 
 ! THEME
@@ -41,10 +41,10 @@ theme.active.foreground: #FFFFFF
 theme.active.background: #000000
 
 theme.inactive.foreground: #FFFFFF
-theme.inactive.background: BACKGROUND
+theme.inactive.background: #212121
 
-theme.unfocused.foreground: #CCCCCC
-theme.unfocused.background: BACKGROUND
+theme.unfocused.foreground: #ABABAB
+theme.unfocused.background: #333333
 
 theme.foreground: FOREGROUND
 theme.background: BACKGROUND

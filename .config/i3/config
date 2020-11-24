@@ -14,7 +14,7 @@ set $mod Mod4
 # Old-school bitmap font
 # font pango:terminus 8
 # OTB Format
-font pango:Terminus Medium 10
+font pango:Terminus Medium 8
 # 4k friendly
 # font pango:JetBrainsMono Nerd Font 12
 
@@ -95,7 +95,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+#bindsym $mod+d focus childqqq
 
 # switch to workspace
 bindsym $mod+1 workspace number 1:Term
@@ -123,6 +123,7 @@ bindsym $mod+Shift+0 move container to workspace number 10
 
 # assign windows to workspaces
 assign [window_role="main_terminal"] 1:Term
+assign [class="jetbrains-webstorm"] 2:Code
 assign [class="jetbrains-pycharm"] 2:Code
 assign [class="jetbrains-clion"] 2:Code
 assign [class="jetbrains-idea"] 2:Code
@@ -132,6 +133,7 @@ for_window [class="Spotify"] move to workspace 8:Media
 #for_window [title="Panda"] move to workspace 10
 assign [class="Evolution"] 7:Comms
 assign [class="Slack"] 7:Comms
+assign [class="Element"] 7:Comms
 
 for_window [class="Nvidia-settings"] floating enable
 
@@ -182,33 +184,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-#bar {
-#    font pango:terminesspowerline 8
-#    status_command ~/workspace/bumblebee-status/bumblebee-status \
-#        -m nic traffic disk cpu memory sensors pasink pasource layout dnf date time \
-#        -p time.format="%H:%M CW %V" date.format="%a, %b %d %Y" \
-#        -t gruvbox-powerline
-#    position top
-#    tray_output primary
-#    colors {
-#        background #282c34
-#        statusline #828987
-#        separator #636d83
-#        #focused_statusline
-#        #focused_background #528bff
-#        #focused_separator
-#        focused_workspace #528bff #528bff #282c34
-#        #active_workspace #       #       #
-#        #inactive_workspace #      #       #
-#        urgent_workspace #e06c75 #be5046 #282c34
-#        #binding_mode #       #       #
-#    }
-#}
-# bar {
-#     i3bar_command ~/.config/i3/lemonbar/i3_lemonbar.sh
-# }
 #bar {
 #    position top
 #    status_command i3status
@@ -231,7 +206,7 @@ bindsym $mod+r mode "resize"
 
 set $wallpaper ~/.config/i3/wallpaper.png
 
-default_border normal 1
+default_border normal 0
 default_floating_border normal 1
 hide_edge_borders both
 focus_follows_mouse no
@@ -239,7 +214,8 @@ mouse_warping none
 workspace_auto_back_and_forth yes
 title_align left
 show_marks yes
-for_window [class=".*"] title_format "<small>%title</small>"
+# for_window [class=".*"] title_format "<small>%title</small>"
+for_window [class=".*"] title_format " %class > %title"
 
 # Lock
 set $locker xscreensaver-command -lock
@@ -261,7 +237,7 @@ mode "$mode_system" {
 bindsym $mod+Pause mode "$mode_system"
 
 # Volume & Media Keys
-set $pulse_audio_sink 2
+set $pulse_audio_sink 10
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume $pulse_audio_sink +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume $pulse_audio_sink -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute $pulse_audio_sink toggle
@@ -283,12 +259,12 @@ set_from_resource $unfocused_foreground theme.unfocused.foreground #888888
 set_from_resource $background theme.background #282c34
 set_from_resource $alert theme.alert #FF0000
 
-# class                 border / background / text / indicator / child_border
-client.focused          $active_background $active_background $active_foreground $active_background $active_background
-client.focused_inactive $inactive_background $inactive_background $inactive_foreground $inactive_background $inactive_background
-client.unfocused        $unfocused_background $unfocused_background $unfocused_foreground $unfocused_background $unfocused_background
-client.urgent           $alert $alert $active_foreground $alert $alert
-client.placeholder      $unfocused_background $unfocused_background $unfocused_foreground $unfocused_background $unfocused_background
+# class                >border >background           >text                 >indicator            >child_border
+client.focused          #000000 $active_background    $active_foreground    $active_background    #000000
+client.focused_inactive #000000 $inactive_background  $inactive_foreground  $inactive_background  #000000
+client.unfocused        #000000 $unfocused_background $unfocused_foreground $unfocused_background #000000
+client.urgent           $alert  $alert                $active_foreground    $alert                $alert
+client.placeholder      #000000 $unfocused_background $unfocused_foreground $unfocused_background #000000
 client.background       $background
 
 # STARTUP
@@ -308,7 +284,7 @@ client.background       $background
 # exec --no-startup-id "setxkbmap -layout us,ca"
 # exec --no-startup-id "kbdd"
 # Screensaver
-# exec --no-startup-id "xscreensaver"
+exec --no-startup-id "xscreensaver"
 # Dropbox
 # exec --no-startup-id "$HOME/.dropbox-dist/dropboxd"
 # Compton
@@ -328,7 +304,7 @@ exec_always --no-startup-id "$HOME/.config/polybar/polybar.sh"
 # exec --no-startup-id "xinput set-prop 9 293 1"
 
 # Other Everyday Use Stuff
-# exec --no-startup-id terminator -r main_terminal
+exec --no-startup-id terminator -r main_terminal
 # exec --no-startup-id spotify
 # exec --no-startup-id evolution
 # exec --no-startup-id slack
