@@ -12,7 +12,7 @@ foreground = ${xrdb:colors.foreground}
 line-size = 0
 line-color = #00000000
 
-border-bottom-size = 1
+border-bottom-size = 0
 border-bottom-color = #00000000
 
 padding-left = 0

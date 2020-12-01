@@ -3,7 +3,7 @@ set -e
 
 source setup/ubuntu_graphical.sh
 
-link_configs dunst i3 i3status polybar rofi compton.conf
+link_configs dunst i3 i3status polybar rofi picom.conf
 link_dotfiles fehbg gtkrc-2.0 xscreensaver Xresources xsession
 
 # Picom (formerly known as compton)
@@ -22,6 +22,17 @@ rm -rf picom
 echo 'Installing i3 and dependencies'
 sudo apt install --assume-yes i3 rofi feh xiccd udevil kbdd
 sudo apt install --assume-yes xscreensaver xscreensaver-data xscreensaver-data-extra xscreensaver-gl xscreensaver-gl-extra xscreensaver-screensaver-bsod
+
+# Picom
+echo 'Installing picom'
+sudo apt install --assume-yes libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-render-util0-dev libxcb-render0-dev libxcb-randr0-dev libxcb-composite0-dev libxcb-image0-dev libxcb-present-dev libxcb-xinerama0-dev libxcb-glx0-dev libpixman-1-dev libdbus-1-dev libconfig-dev libgl1-mesa-dev  libpcre2-dev  libevdev-dev uthash-dev libev-dev libx11-xcb-dev
+git clone https://github.com/yshui/picom.git
+cd picom
+git checkout stable/8
+git submodule update --init --recursive
+meson --buildtype=release . build
+ninja -C build
+ninja -C build install
 
 # Polybar dependencies
 echo 'Installing Polybar dependencies'

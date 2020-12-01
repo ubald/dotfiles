@@ -287,8 +287,8 @@ client.background       $background
 exec --no-startup-id "xscreensaver"
 # Dropbox
 # exec --no-startup-id "$HOME/.dropbox-dist/dropboxd"
-# Compton
-# exec --no-startup-id "compton --config ~/.config/compton.conf -b"
+# Picom/Compton
+exec --no-startup-id "picom --config ~/.config/picom.conf -b"
 # Polybar
 exec_always --no-startup-id "$HOME/.config/polybar/polybar.sh"
 
