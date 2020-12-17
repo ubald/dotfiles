@@ -7,7 +7,7 @@ source setup/functions.sh
 git submodule update --init --recursive
 
 mkdir -p ~/.config
-link_configs bat fish nvim omf ranger
+link_configs bat fish nvim omf ranger alacritty
 link_dotfiles gitconfig tigrc tmux tmux.conf vim vimrc
 
 # Enable Fish config

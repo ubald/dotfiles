@@ -1,14 +1,11 @@
-# ~/.config/fish/functions/nvm.fish
 function nvm
   bass source ~/.nvm/nvm.sh --no-use ';' nvm $argv
 end
 
-# ~/.config/fish/functions/nvm_find_nvmrc.fish
 function nvm_find_nvmrc
   bass source ~/.nvm/nvm.sh --no-use ';' nvm_find_nvmrc
 end
 
-# ~/.config/fish/functions/load_nvm.fish
 function load_nvm --on-variable="PWD"
   set -l nvmrc_path (nvm_find_nvmrc)
   if test -n "$nvmrc_path"

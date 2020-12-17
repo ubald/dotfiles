@@ -67,3 +67,7 @@ Windows uses local time and linux UTC, since it's more complicated to run window
 ## Setup
 
 See `setup_arch.sh`.
+
+# Mac
+
+`defaults write -g com.apple.mouse.scaling 5`
