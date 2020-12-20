@@ -1,5 +1,5 @@
 [prefs]
-primary-monitor = ${env:MONITOR:DP-4}
+primary-monitor = ${env:MONITOR:DP-2}
 secondary-monitor = ${env:MONITOR:HDMI-0}
 
 [bar/base]
