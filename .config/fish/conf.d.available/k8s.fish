@@ -1,3 +1,5 @@
+# Kubernetes configuration
+
 alias k="kubectl"
 alias kcontexts="kubectl config get-contexts"
 alias kuse="kubectl config use-context"

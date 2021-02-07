@@ -1,2 +1,3 @@
-# ROS Linux
-bass source /opt/ros/melodic/setup.bash
+# Ubuntu ROS configuration
+
+bass source /opt/ros/noetic/setup.bash

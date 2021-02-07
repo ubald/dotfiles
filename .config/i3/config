@@ -135,15 +135,18 @@ assign [class="Evolution"] 7:Comms
 assign [class="Slack"] 7:Comms
 assign [class="Element"] 7:Comms
 
+# assign [class="PsychicLights"] 9
+for_window [class="PsychicLights"] floating enable
+
 for_window [class="Nvidia-settings"] floating enable
 
 # use `xrandr` to list possible outputs
 
-workspace 1:Term output DP-2
-workspace 2:Code output DP-2
-workspace 3 output DP-2
-workspace 4 output DP-2
-workspace 5 output DP-2
+workspace 1:Term output DP-4
+workspace 2:Code output DP-4
+workspace 3 output DP-4
+workspace 4 output DP-4
+workspace 5 output DP-4
 
 workspace 6:Web output HDMI-0
 workspace 7:Comms output HDMI-0

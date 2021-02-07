@@ -10,7 +10,7 @@
 	process = git-lfs filter-process
 	required = true
 [core]
-    autocrlf = false
+	autocrlf = input
 [log]
 	follow = true
 [pager]

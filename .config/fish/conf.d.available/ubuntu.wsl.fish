@@ -1,1 +1,3 @@
+# Ubuntu-WSL configuration
+
 cd ~
