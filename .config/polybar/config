@@ -1,6 +1,6 @@
 [prefs]
-primary-monitor = ${env:MONITOR:DP-4}
-secondary-monitor = ${env:MONITOR:HDMI-0}
+primary-monitor = ${env:MONITOR:USB-C-0}
+secondary-monitor = ${env:MONITOR:DP-4}
 
 [bar/base]
 width = 100%
@@ -41,7 +41,7 @@ tray-padding = 2
 [bar/secondary]
 inherit = bar/base
 monitor = ${prefs.secondary-monitor}
-modules-right =
+modules-right = date
 
 [settings]
 screenchange-reload = true

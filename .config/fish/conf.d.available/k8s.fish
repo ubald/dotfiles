@@ -143,3 +143,7 @@ alias kgpvcw='kgpvc --watch'
 alias kepvc='kubectl edit pvc'
 alias kdpvc='kubectl describe pvc'
 alias kdelpvc='kubectl delete pvc'
+
+function kpf --argument-names namespace svc_name from_port to_port
+    kubectl port-forward --namespace "$namespace" svc/"$svc_name" "$to_port":"$from_port"
+end

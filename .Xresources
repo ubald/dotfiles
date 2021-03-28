@@ -56,11 +56,9 @@ theme.empty: DARKER
 ! ROFI
 ! State: 'bg','fg', 'bgalt', 'hlbg', 'hlfg'
 rofi.color-enabled: true
-rofi.color-window: argb:60000000, BACKGROUND, BLUE_
+rofi.color-window: argb:DD000000, BACKGROUND, BLUE_
 rofi.color-normal: argb:00000000, FOREGROUND, argb:00000000, BLUE_, BACKGROUND
 rofi.color-active: BACKGROUND, BLUE_, BACKGROUND, BLUE_, BACKGROUND
 rofi.color-urgent: BACKGROUND, ORANGE_, BACKGROUND, ORANGE_, ORANGE_
-rofi.separator-style: none
-rofi.fullscreen: true
 
 Xcursor.size: 16

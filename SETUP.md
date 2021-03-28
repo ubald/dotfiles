@@ -43,6 +43,14 @@ https://www.dropbox.com/install-linux
     sudo vim /etc/gdm3/Xsession
     Line 132, remove option -nocpp for userresources
 
+# Invert Win & Alt
+
+In `gnome-tweak-tools`, section "Keyboard", go into "Additional Layout Options" then "Alt/Win key behavior" and choose "Alt is swapped with Win".
+
+# Set input source shortcut
+
+Change to Alt+Space and Shift+Alt+Space
+
 # Dual Booting
 
 Windows uses local time and linux UTC, since it's more complicated to run windows with UTC, change linux to use local time.

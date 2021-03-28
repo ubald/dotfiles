@@ -51,7 +51,8 @@ cd -
 
 # Theming Utils
 echo 'Installing theming utilities'
-sudo apt install --assume-yes gtk-chtheme lxappearance
+sudo apt install --assume-yes gtk-chtheme lxappearance qt5ct
+# Add this to ~/.profile: export QT_QPA_PLATFORMTHEME="qt5ct"
 
 # Siji font
 echo 'Installing siji font'
