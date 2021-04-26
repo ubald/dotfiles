@@ -21,3 +21,9 @@ set +e
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 set -e
 ~/.fzf/install --all
+
+# Elgato Light Control
+git clone https://github.com/waxlamp/elgato.git
+cd elgato && sudo pip3 intall .
+cd ..
+rm -rf ./elgato

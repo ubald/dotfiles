@@ -37,8 +37,10 @@ colors.background: #212121
 colors.gutter: GUTTER
 
 ! THEME
-theme.active.foreground: #FFFFFF
-theme.active.background: #000000
+theme.active.foreground: #000000
+! #FFFFFF
+theme.active.background: #ff3366 
+! #000000
 
 theme.inactive.foreground: #FFFFFF
 theme.inactive.background: #212121

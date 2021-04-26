@@ -1,0 +1,12 @@
+/logs/
+/plugin_config/obs-browser/
+/plugin_config/obs-browser/blob_storage/
+/plugin_config/obs-browser/Cache/
+/plugin_config/obs-browser/Code Cache/
+/plugin_config/obs-browser/GPUCache/
+/plugin_config/obs-browser/*.log
+/plugin_config/obs-browser/Cookies*
+/plugin_config/obs-browser/LOG
+/plugins/
+/profiler_data/
+*.bak

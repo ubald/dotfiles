@@ -25,16 +25,16 @@ function load_nvm --on-variable="PWD"
     return
   end
 
-  set -l node_version (nvm version)
+  # set -l node_version (nvm version)
   # set -l default_node_version (nvm version default)
   # else if test "$node_version" != "$default_node_version"
   #   echo "Reverting to default Node version"
   #   nvm use default
   #   nvm deactivate --silent
   # end
-  if test "$node_version" != "none"
-    nvm deactivate --silent
-  end
+  # if test "$node_version" != "none"
+  #   nvm deactivate --silent
+  # end
 end
 
 # ~/.config/fish/config.fish

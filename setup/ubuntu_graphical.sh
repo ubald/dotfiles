@@ -3,7 +3,7 @@ set -e
 
 source setup/ubuntu_base.sh
 
-link_configs blender terminator
+link_configs blender terminator obs-studio
 
 # Flashboack
 sudo apt install --assume-yes \
