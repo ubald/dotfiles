@@ -23,7 +23,8 @@
     show_titlebar = False
     scrollbar_position = hidden
     scrollback_lines = 5000
-    palette = "#2e3436:#f77976:#98c379:#e5c07b:#61afef:#c678dd:#56b6c2:#d3d0c8:#747369:#f77976:#98c379:#e5c07b:#61afef:#c678dd:#56b6c2:#f2f0ec"
+    palette = "#1a1a1a:#f77976:#98c379:#e5c07b:#61afef:#c678dd:#56b6c2:#d3d0c8:#747369:#f77976:#98c379:#e5c07b:#61afef:#c678dd:#56b6c2:#f2f0ec"
+    login_shell = True
     use_custom_command = True
     custom_command = tmux
     use_system_font = False

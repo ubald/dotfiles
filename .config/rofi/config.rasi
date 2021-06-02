@@ -3,7 +3,8 @@ configuration {
 /*	width: 50;*/
 /*	lines: 15;*/
 /*	columns: 1;*/
-	font: "Terminus Medium 8";
+	font: "JetBrainsMono Nerd Font Regular 16";
+/*	font: "Terminus Medium 8";*/
 	bw: 0;
 /*	location: 0;*/
 	padding: 400;

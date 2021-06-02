@@ -1,9 +1,9 @@
 [user]
-	name = François Ubald Brien
-	email = ubald@ubaldesign.com
-	signingkey = A4B6F2FE27FB02ED
+	name = François Ubald Brien
+	email = ubald@ubald.dev
+    signingkey = 82CCAD48F8BDEEF2
 [commit]
-	gpgsign = false
+	gpgsign = true
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f

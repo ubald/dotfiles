@@ -33,7 +33,8 @@ colors.red: RED
 colors.orange: ORANGE
 colors.yellow: YELLOW
 colors.foreground: FOREGROUND
-colors.background: #212121
+colors.background: #FF000000 
+! #212121
 colors.gutter: GUTTER
 
 ! THEME
@@ -52,7 +53,7 @@ theme.foreground: FOREGROUND
 theme.background: BACKGROUND
 
 theme.highlight: BLUE_
-theme.alert: RED
+theme.alert: #FAAE15
 theme.empty: DARKER
 
 ! ROFI
