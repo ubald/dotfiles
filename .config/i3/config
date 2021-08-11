@@ -150,6 +150,7 @@ assign [class="Evolution"] $ws7
 assign [class="Slack"] $ws7
 assign [class="Element"] $ws7
 assign [class="Keybase"] $ws7
+assign [class="obs"] $ws9
 
 assign [class="VirtualBox Manager"] $ws0
 assign [class="VirtualBox Machine"] $ws0
@@ -161,11 +162,11 @@ for_window [class="jetbrains-toolbox"] floating enable
 
 # use `xrandr` to list possible outputs
 
-workspace $ws1 output USB-C-0
-workspace $ws2 output USB-C-0
-workspace $ws3 output USB-C-0
-workspace $ws4 output USB-C-0
-workspace $ws5 output USB-C-0
+workspace $ws1 output HDMI-0
+workspace $ws2 output HDMI-0
+workspace $ws3 output HDMI-0
+workspace $ws4 output HDMI-0
+workspace $ws5 output HDMI-0
 
 workspace $ws6 output DP-4
 workspace $ws7 output DP-4
@@ -341,7 +342,7 @@ exec_always --no-startup-id "$HOME/.config/polybar/polybar.sh"
 # exec --no-startup-id "xinput set-prop 9 293 1"
 
 # Other Everyday Use Stuff
-exec --no-startup-id terminator -r main_terminal
+# exec --no-startup-id terminator -r main_terminal
 # exec --no-startup-id spotify
 # exec --no-startup-id evolution
 # exec --no-startup-id slack
