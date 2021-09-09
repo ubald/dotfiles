@@ -162,17 +162,20 @@ for_window [class="jetbrains-toolbox"] floating enable
 
 # use `xrandr` to list possible outputs
 
-workspace $ws1 output HDMI-0
-workspace $ws2 output HDMI-0
-workspace $ws3 output HDMI-0
-workspace $ws4 output HDMI-0
-workspace $ws5 output HDMI-0
+set $left DP-4
+set $right HDMI-0
 
-workspace $ws6 output DP-4
-workspace $ws7 output DP-4
-workspace $ws8 output DP-4
-workspace $ws9 output DP-4
-workspace $ws0 output DP-4
+workspace $ws1 output $right
+workspace $ws2 output $right
+workspace $ws3 output $right
+workspace $ws4 output $right
+workspace $ws5 output $right
+
+workspace $ws6 output $left
+workspace $ws7 output $left
+workspace $ws8 output $left
+workspace $ws9 output $left
+workspace $ws0 output $left
 
 # reload the configuration file
 bindsym $mod+Shift+c reload

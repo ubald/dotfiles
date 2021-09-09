@@ -3,7 +3,7 @@ set -e
 
 source setup/ubuntu_graphical.sh
 
-link_configs dunst i3 i3status polybar rofi picom.conf
+link_configs dunst i3 i3status polybar picom.conf
 link_dotfiles fehbg gtkrc-2.0 xscreensaver Xresources xsession
 
 # Picom (formerly known as compton)
@@ -22,6 +22,19 @@ rm -rf picom
 echo 'Installing i3 and dependencies'
 sudo apt install --assume-yes i3 rofi feh xiccd udevil kbdd
 sudo apt install --assume-yes xscreensaver xscreensaver-data xscreensaver-data-extra xscreensaver-gl xscreensaver-gl-extra xscreensaver-screensaver-bsod
+
+# Rofi
+sudo apt install --assume-yes libbison-dev flex libxkbcommon-x11-dev libstartup-notification0-dev check
+git clone --recursive https://github.com/DaveDavenport/rofi
+cd rofi
+git checkout 1.6.1
+git submodule update --init --recursive
+autoreconf -i
+mkdir build
+cd build
+../configure --disable-check
+make -j
+sudo make install
 
 # Picom
 echo 'Installing picom'
