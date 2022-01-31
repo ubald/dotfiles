@@ -23,7 +23,10 @@ set -e
 ~/.fzf/install --all
 
 # Elgato Light Control
-git clone https://github.com/waxlamp/elgato.git
-cd elgato && sudo pip3 intall .
+sudo apt install --assume-yes python3 python3-pip
+if [ ! -d elgato ]; then
+	git clone https://github.com/waxlamp/elgato.git
+fi
+cd elgato && sudo pip3 install .
 cd ..
 rm -rf ./elgato

@@ -2,6 +2,7 @@
 set -g theme_display_git yes
 set -g theme_display_git_dirty yes
 set -g theme_display_git_untracked yes
+set -g theme_git_default_branches master main trunk
 set -g theme_display_k8s_context yes
 set -g theme_display_k8s_namespace yes
 set -g theme_display_virtualenv yes

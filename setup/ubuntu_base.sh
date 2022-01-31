@@ -13,6 +13,7 @@ sudo apt install --assume-yes \
   vim neovim \
   git tig \
   build-essential clang cmake cmake-curses-gui \
+  binutils make autoconf automake \
   silversearcher-ag thefuck \
   pavucontrol lm-sensors
 
