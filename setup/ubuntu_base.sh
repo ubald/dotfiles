@@ -17,6 +17,11 @@ sudo apt install --assume-yes \
   silversearcher-ag thefuck \
   pavucontrol lm-sensors
 
+# More up to date fish
+sudo apt-add-repository ppa:fish-shell/release-3
+sudo apt update
+sudo apt upgrade
+
 # Use fish by default
 chsh -s $(which fish)
 
