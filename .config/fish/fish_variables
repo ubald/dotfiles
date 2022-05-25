@@ -4,7 +4,7 @@ SETUVAR --export PYENV_ROOT:/home/ubald/\x2epyenv
 SETUVAR __fish_classic_git_prompt_initialized:\x1d
 SETUVAR __fish_init_2_39_8:\x1d
 SETUVAR __fish_init_2_3_0:\x1d
-SETUVAR __fish_initialized:3100
+SETUVAR __fish_initialized:3400
 SETUVAR _fish_abbr_mux:tmuxinator
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
 SETUVAR fish_color_cancel:\x2dr
@@ -35,5 +35,6 @@ SETUVAR fish_pager_color_completion:white
 SETUVAR fish_pager_color_description:yellow
 SETUVAR fish_pager_color_prefix:brblack
 SETUVAR fish_pager_color_progress:green
+SETUVAR fish_pager_color_selected_background:\x2dr
 SETUVAR fish_user_abbreviations:mux\x20tmuxinator
 SETUVAR fish_user_paths:/home/ubald/\x2elocal/bin\x1e/home/ubald/\x2efzf/bin

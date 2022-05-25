@@ -17,6 +17,9 @@ sudo apt install --assume-yes \
   silversearcher-ag thefuck \
   pavucontrol lm-sensors
 
+# Terminal
+sudo snap install alacritty --classic
+
 # More up to date fish
 sudo apt-add-repository ppa:fish-shell/release-3
 sudo apt update
