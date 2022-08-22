@@ -56,10 +56,14 @@ configuration {
 /*	click-to-exit: true;*/
 /*	show-match: true;*/
 /*	theme: ;*/
-	color-normal: "argb:00000000, #abb2bf, argb:00000000, #008CCC, #282c34";
+	color-normal: "argb:00000000, #abb2bf, argb:00000000, #ff3366, #282c34";
 	color-urgent: "#282c34, #f3843d, #282c34, #f3843d, #f3843d";
-	color-active: "#282c34, #008CCC, #282c34, #008CCC, #282c34";
-	color-window: "argb:DD000000, #282c34, #008CCC";
+	color-active: "#282c34, #ff3366, #282c34, #ff3366, #282c34";
+	color-window: "argb:DD000000, #282c34, #ff3366";
+/*	color-normal: "argb:00000000, #abb2bf, argb:00000000, #008CCC, #282c34";*/
+/*	color-urgent: "#282c34, #f3843d, #282c34, #f3843d, #f3843d";*/
+/*	color-active: "#282c34, #008CCC, #282c34, #008CCC, #282c34";*/
+/*	color-window: "argb:DD000000, #282c34, #008CCC";*/
 /*	max-history-size: 25;*/
 /*	combi-hide-mode-prefix: false;*/
 /*	matching-negate-char: '-' /* unsupported */;*/
