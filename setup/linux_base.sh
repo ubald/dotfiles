@@ -6,6 +6,13 @@ source setup/common.sh
 # Enable Fish config
 enable_fish_config linux
 
+# Firewall
+sudo ufw default allow outgoing
+sudo ufw default deny incoming
+sudo ufw allow ssh
+sudo ufw limit ssh
+sudo ufw enable
+
 # Prettyping
 wget https://raw.githubusercontent.com/denilsonsa/prettyping/master/prettyping
 chmod +x prettyping

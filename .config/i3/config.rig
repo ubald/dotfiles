@@ -268,8 +268,8 @@ set $elgato On (;) Off (') Colder ([) Warner (]) Dimmer (-) Brighter (+)
 mode "$elgato" {
     bindsym semicolon    exec --no-startup-id elgato off, mode "default"
     bindsym apostrophe   exec --no-startup-id elgato on, mode "default"
-    bindsym bracketleft  exec --no-startup-id elgato color --warmer # They are inverted ATM
-    bindsym bracketright exec --no-startup-id elgato color --cooler # They are inverted ATM
+    bindsym bracketleft  exec --no-startup-id elgato color --cooler
+    bindsym bracketright exec --no-startup-id elgato color --warmer
     bindsym minus        exec --no-startup-id elgato brightness --dimmer
     bindsym equal        exec --no-startup-id elgato brightness --brighter
     bindsym Return mode "default"

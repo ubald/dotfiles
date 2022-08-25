@@ -6,6 +6,12 @@ source setup/ubuntu_graphical.sh
 link_configs dunst i3 i3status polybar rofi picom.conf
 link_dotfiles fehbg gtkrc-2.0 xscreensaver Xresources xsession
 
+# Manuall installations since 22.04
+sudo apt install --assume-yes gnome-screenshot
+# You can also install flameshot, but will need to change the desktop entry withL:
+# sudo vim /usr/share/applications/org.flameshot.Flameshot.desktop 
+# in order to make it default to the GUI.
+
 # Picom (formerly known as compton)
 sudo apt install --assume-yes meson ninja-build libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-render-util0-dev libxcb-render0-dev libxcb-randr0-dev libxcb-composite0-dev libxcb-image0-dev libxcb-present-dev libxcb-xinerama0-dev libxcb-glx0-dev libpixman-1-dev libdbus-1-dev libconfig-dev libgl1-mesa-dev libpcre3-dev libev-dev libevdev-dev uthash-dev libev-dev libx11-xcb-dev
 if [ ! -d picom ]; then
