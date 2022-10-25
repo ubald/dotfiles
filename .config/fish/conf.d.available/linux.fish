@@ -12,3 +12,6 @@ alias capslock="python3 -c 'from ctypes import *; X11 = cdll.LoadLibrary(\"libX1
 
 # Resets all of the USB devices, useful on the work ThinkPad that freezes the bus when connecting the USB-C hub 
 alias resetusb="sudo find /sys/bus/usb/devices/*/authorized -exec sh -c 'echo 0 > \${0}; echo 1 > \${0}' {} \;"
+
+# OBS needs a reset once in a while to restart the webcam
+alias resetobs="sudo modprobe -r v4l2loopback"

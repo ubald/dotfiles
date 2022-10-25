@@ -70,3 +70,5 @@ set -xg FZF_DEFAULT_OPTS '--height 40% --layout=reverse --border'
 set -xg VIRTUAL_ENV_DISABLE_PROMPT '1'
 
 load_nvm
+
+pyenv init - | source
