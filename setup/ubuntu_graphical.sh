@@ -3,6 +3,9 @@ set -e
 
 source setup/ubuntu_base.sh
 
+# Enable Fish config
+enable_fish_config ubuntu.graphical
+
 link_configs blender terminator obs-studio user-dirs.dirs
 
 # Flashboack
@@ -13,6 +16,9 @@ sudo apt install --assume-yes \
  sudo apt install --assume-yes \
    terminator \
    xfonts-terminus fonts-firacode
+
+# Terminal
+sudo snap install alacritty --classic
 
 # Editors
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
@@ -91,3 +97,12 @@ echo 'Installing Spotify'
 curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | sudo apt-key add - 
 echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
 sudo apt update && sudo apt --assume-yes install spotify-client
+
+# Elgato Light Control
+sudo apt install --assume-yes python3 python3-pip
+if [ ! -d elgato ]; then
+	git clone https://github.com/waxlamp/elgato.git
+fi
+cd elgato && sudo pip3 install .
+cd ..
+rm -rf ./elgato

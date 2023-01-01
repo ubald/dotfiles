@@ -29,11 +29,8 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 set -e
 ~/.fzf/install --all
 
-# Elgato Light Control
-sudo apt install --assume-yes python3 python3-pip
-if [ ! -d elgato ]; then
-	git clone https://github.com/waxlamp/elgato.git
-fi
-cd elgato && sudo pip3 install .
-cd ..
-rm -rf ./elgato
+# nvm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+
+# pyenv
+curl https://pyenv.run | bash
