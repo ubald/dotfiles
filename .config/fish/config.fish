@@ -72,3 +72,7 @@ set -xg VIRTUAL_ENV_DISABLE_PROMPT '1'
 load_nvm
 
 pyenv init - | source
+
+# Generated for envman. Do not edit.
+test -s "$HOME/.config/envman/load.fish"; and source "$HOME/.config/envman/load.fish"
+

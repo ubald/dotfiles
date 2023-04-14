@@ -276,6 +276,7 @@ mode "$mode_system" {
     bindsym Escape mode "default"
 }
 bindsym $mod+Pause mode "$mode_system"
+bindsym $mod+Shift+P mode "$mode_system"
 
 # Fancy elgato lights control
 set $elgato On (;) Off (') Colder ([) Warner (]) Dimmer (-) Brighter (+)
