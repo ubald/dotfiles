@@ -18,3 +18,6 @@ cp $PWD/snap/ncspot/common/.config/config.toml ~/snap/ncspot/common/.config/
 
 # Enable Fish config
 enable_fish_config unix
+
+# Install NVM
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash

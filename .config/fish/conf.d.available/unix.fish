@@ -9,3 +9,6 @@ alias docker-remove-untagged-images="echo (docker images | awk \'/^<none>/ {prin
 # Pyenv
 set -Ux PYENV_ROOT $HOME/.pyenv
 fish_add_path $PYENV_ROOT/bin
+
+fish_add_path /usr/local/go/bin
+fish_add_path ~/bin

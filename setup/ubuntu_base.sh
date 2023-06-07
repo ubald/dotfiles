@@ -7,6 +7,7 @@ source setup/linux_base.sh
 enable_fish_config ubuntu
 
 # Essentials
+sudo apt-add-repository ppa:fish-shell/release-3
 sudo apt install --assume-yes \
   ssh apt-transport-https curl net-tools \
   fish tmux ranger \

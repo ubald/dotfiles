@@ -1,0 +1,1 @@
+/home/ubald/.config/fish/conf.d.available/k9s.fish
