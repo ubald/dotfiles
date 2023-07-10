@@ -12,3 +12,6 @@ fish_add_path $PYENV_ROOT/bin
 
 fish_add_path /usr/local/go/bin
 fish_add_path ~/bin
+fish_add_path ~/.phpenv/bin
+
+alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'

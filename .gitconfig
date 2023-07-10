@@ -4,6 +4,8 @@
     signingkey = 82CCAD48F8BDEEF2
 [commit]
 	gpgsign = true
+[push]
+    autoSetupRemote = true
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
@@ -16,7 +18,6 @@
 [pager]
     diff = diff-so-fancy | less --tabs=1,5 -RFX
     show = diff-so-fancy | less --tabs=1,5 -RFX
-
 [color]
 	ui = true
 [color "diff-highlight"]
