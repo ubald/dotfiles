@@ -2,6 +2,8 @@
 	name = François Ubald Brien
 	email = ubald@ubald.dev
     signingkey = 82CCAD48F8BDEEF2
+[init]
+    defaultBranch = main
 [commit]
 	gpgsign = true
 [push]
