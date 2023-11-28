@@ -10,15 +10,16 @@ function load_nvm --on-variable="PWD"
   set -l nvmrc_path (nvm_find_nvmrc)
   if test -n "$nvmrc_path"
 
-    set -l nvmrc_node_version (nvm version (cat $nvmrc_path))
+    set -l nvmrc_version (env cat $nvmrc_path)
+    set -l nvmrc_node_version (nvm version $nvmrc_version)
     if test "$nvmrc_node_version" = "N/A"
-      nvm install (cat $nvmrc_path)
+      nvm install $nvmrc_version --silent
       return
     end
 
     set -l node_version (nvm version)
     if test nvmrc_node_version != node_version
-      nvm use $nvmrc_node_version
+      nvm use $nvmrc_node_version --silent
       return
     end
 

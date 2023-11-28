@@ -1,6 +1,7 @@
 # Unix configuration
 
 set -gx fish_user_paths $HOME/.local/bin $fish_user_paths
+set -gx fish_user_paths $HOME/go/bin $fish_user_paths
 set -gx fish_user_paths $HOME/bin $fish_user_paths
 
 alias docker-clean-containers="docker rm (docker ps -a -q)"

@@ -4,4 +4,4 @@
 # Fish version of: export GPG_TTY=$(tty)
 set -gx GPG_TTY (tty)
 
-cd ~
+# cd ~
