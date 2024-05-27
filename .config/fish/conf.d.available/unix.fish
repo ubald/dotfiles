@@ -17,6 +17,7 @@ fish_add_path /usr/local/go/bin
 fish_add_path ~/bin
 fish_add_path ~/.phpenv/bin
 
+alias tf='terraform'
 alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
 alias export_idf='. $HOME/src/esp/esp-idf/export.fish'
 
