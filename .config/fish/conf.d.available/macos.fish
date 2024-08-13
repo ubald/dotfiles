@@ -12,4 +12,6 @@ set -gx fish_user_paths "$HOME/Library/Python/3.8/bin" $fish_user_paths
 # set -gx fish_user_paths "/usr/local/lib/python3.7/site-packages" $fish_user_paths
 # set -gx fish_user_paths "$HOME/Library/Python/2.7/bin" $fish_user_paths
 
+set -gx fish_user_paths "/opt/homebrew/bin/" $fish_user_paths
+
 alias gfp="git fetch -p && git pull"

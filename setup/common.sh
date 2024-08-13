@@ -10,14 +10,8 @@ mkdir -p ~/.config
 link_configs bat fish k9s nvim omf ranger alacritty
 link_dotfiles gitconfig tigrc tmux tmux.conf vim vimrc
 
-# TODO: Implement those snap configs better
-#       Can't symlink, it breaks snaps with permission denied errors
-mkdir -p ~/snap/ncspot/common/.config
-# ln -fsT $PWD/snap/ncspot/common/.config ~/snap/ncspot/common/.config
-cp $PWD/snap/ncspot/common/.config/config.toml ~/snap/ncspot/common/.config/
-
 # Enable Fish config
 enable_fish_config unix
 
 # Install NVM
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash

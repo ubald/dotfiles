@@ -44,3 +44,9 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
 sudo apt-add-repository https://cli.github.com/packages
 sudo apt update
 sudo apt install --assume-yes gh
+
+# TODO: Implement those snap configs better
+#       Can't symlink, it breaks snaps with permission denied errors
+mkdir -p ~/snap/ncspot/common/.config
+# ln -fsT $PWD/snap/ncspot/common/.config ~/snap/ncspot/common/.config
+cp $PWD/snap/ncspot/common/.config/config.toml ~/snap/ncspot/common/.config/

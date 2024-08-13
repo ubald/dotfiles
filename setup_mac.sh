@@ -3,6 +3,8 @@ set -e
 
 # Install Brew first + dependencies
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+(echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> ~/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Essentials
 echo 'Installing essentials'
@@ -10,14 +12,14 @@ brew install \
   fish tmux ranger \
   vim neovim \
   git tig gh \
-  the_silver_searcher thefuck bat diff-so-fancy prettyping \
-  font-fira-code font-firacode-nerd-font
+  the_silver_searcher thefuck bat diff-so-fancy prettyping
 
 brew tap homebrew/cask-fonts
-brew cask install font-fira-code font-firacode-nerd-font
+brew install --cask font-fira-code
+brew install --cask font-fira-code-nerd-font
 
 # Continue with common linux-like setup
-source setup/common
+source setup/common.sh
 
 link_configs karabiner
 
@@ -38,4 +40,4 @@ $(brew --prefix)/opt/fzf/install
 curl -L https://get.oh-my.fish | fish
 
 # Tmuxinator
-gem install tmuxinator
+# gem install tmuxinator

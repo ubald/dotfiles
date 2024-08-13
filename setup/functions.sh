@@ -4,14 +4,22 @@ set -e
 link_configs() {
     configs=("$@")
     for config in "${configs[@]}"; do
-        ln -fsT $PWD/.config/$config ~/.config/$config
+        if [ "$(uname)" == "Darwin" ]; then
+            ln -fsF $PWD/.config/$config ~/.config/$config
+        else
+            ln -fsT $PWD/.config/$config ~/.config/$config
+        fi
     done
 }
 
 link_dotfiles() {
     dotfiles=("$@")
     for dotfile in "${dotfiles[@]}"; do
-        ln -fsT $PWD/.$dotfile ~/.$dotfile
+        if [ "$(uname)" == "Darwin" ]; then
+            ln -fsF $PWD/.$dotfile ~/.$dotfile
+        else
+            ln -fsT $PWD/.$dotfile ~/.$dotfile
+        fi
     done
 }
 
