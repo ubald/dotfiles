@@ -7,3 +7,6 @@ source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.in
 set -gx NSFW 1
 
 rvm default
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/ubald/bin/google-cloud-sdk/path.fish.inc' ]; . '/Users/ubald/bin/google-cloud-sdk/path.fish.inc'; end

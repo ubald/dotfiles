@@ -75,7 +75,3 @@ pyenv init - | source
 
 # Generated for envman. Do not edit.
 test -s "$HOME/.config/envman/load.fish"; and source "$HOME/.config/envman/load.fish"
-
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/ubald/bin/google-cloud-sdk/path.fish.inc' ]; . '/Users/ubald/bin/google-cloud-sdk/path.fish.inc'; end

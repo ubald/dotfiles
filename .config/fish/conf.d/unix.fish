@@ -1,1 +1,1 @@
-/Users/ubald/.config/fish/conf.d.available/unix.fish
+/home/ubald/.config/fish/conf.d.available/unix.fish
