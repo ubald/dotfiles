@@ -65,7 +65,7 @@ if not __ssh_agent_is_started
     __ssh_agent_start
 end
 
-thefuck --alias | source
+# thefuck --alias | source
 set -xg FZF_DEFAULT_OPTS '--height 40% --layout=reverse --border'
 set -xg VIRTUAL_ENV_DISABLE_PROMPT '1'
 

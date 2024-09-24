@@ -19,7 +19,7 @@ chmod +x prettyping
 sudo mv prettyping /usr/local/bin/
 
 # Diff So Fancy
-wget https://raw.githubusercontent.com/so-fancy/diff-so-fancy/master/third_party/build_fatpack/diff-so-fancy
+wget https://github.com/so-fancy/diff-so-fancy/releases/download/v1.4.4/diff-so-fancy
 chmod +x diff-so-fancy
 sudo mv diff-so-fancy /usr/local/bin/
 
