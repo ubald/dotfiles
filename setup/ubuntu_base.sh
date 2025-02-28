@@ -30,6 +30,9 @@ chsh -s $(which fish)
 wget https://github.com/sharkdp/bat/releases/download/v0.16.0/bat_0.16.0_amd64.deb
 sudo dpkg -i bat_0.16.0_amd64.deb
 rm bat_0.16.0_amd64.deb
+# Create a symlink because the name bat conflicts with another package
+mkdir -p ~/.local/bin
+ln -s /usr/bin/batcat ~/.local/bin/bat
 
 # OMF
 curl -L https://get.oh-my.fish > install
